@@ -15,6 +15,7 @@ export default function Main() {
     const [foodItemsList, setFoodItemsList] = React.useState([]);
     const [contentIsLoading, setContentIsLoading] = React.useState(true);
     const [cartIsOpened, setCartIsOpened] = React.useState(false);
+    const [sortingMode, setSortingMode] = React.useState("id");
   
     // React.useEffect(() => {
     //   fetch('https://65d8c66cc96fbb24c1bc47d2.mockapi.io/fooditems')
@@ -28,19 +29,44 @@ export default function Main() {
   
     React.useEffect(() => {
       setTimeout(() => {
-        axios.get('https://65d8c66cc96fbb24c1bc47d2.mockapi.io/fooditems').then((response) => {
+        axios.get(`https://65d8c66cc96fbb24c1bc47d2.mockapi.io/fooditems`).then((response) => {
           setFoodItemsList(response.data);
           setContentIsLoading(false);
         });
       }, 1);
     }, []);
 
+    const sortFetchedData = (fetchedData) => {
+        let sortedList;
+        if (sortingMode === "price") {
+            sortedList = fetchedData.itemsList.sort(function(a, b) {
+                return a.price - b.price;
+            })
+        } else {
+            if (sortingMode === "title") {
+                sortedList = fetchedData.itemsList.sort(function(a, b) {
+                    let x = a.title.toLowerCase();
+                    let y = b.title.toLowerCase();
+                    if (x > y) {return 1;}
+                    if (x < y) {return -1;}
+                    return 0;
+                });
+            } else {
+                sortedList = fetchedData.itemsList.sort(function(a, b) {
+                    return a.id - b.id;
+                })
+            }
+        }
+        fetchedData.itemsList = sortedList;
+        return(fetchedData);
+    }
+
     return(
         <div className="mainshell">
             {cartIsOpened && <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
             <Topbar onClickCart={() => setCartIsOpened(true)} />
             <div className="main-section">
-                <Menu />
+                <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />
                 {contentIsLoading ? (
                     <>
                         <h2>Загрузка...</h2>
@@ -54,7 +80,7 @@ export default function Main() {
                         </div>
                     </>
                 ) : (
-                foodItemsList.map((objCategory) => (
+                foodItemsList.map((objCategory) => (sortFetchedData(objCategory))).map((objCategory) => (
                     <div key={objCategory.categoryId}>
                     <h2 id={objCategory.categoryTag}>{objCategory.categoryTitle}</h2>
                     <div className="food-section">

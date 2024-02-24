@@ -12,7 +12,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/order" element={<Order />} />
+        <Route path="/placeorder" element={<Order />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

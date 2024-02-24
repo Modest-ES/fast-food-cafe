@@ -10,12 +10,10 @@ export default function CartOverlayShell({onClickBtnBack}) {
                         <button className="btn-back" onClick={onClickBtnBack}>
                             <img width={44} height={44} src="./icon_leftarrow.png" alt="Back button" title="Вернуться" />
                         </button>
-                        <h3>Корзина</h3>
                     </div>
+                    <h3>Корзина</h3>
                 {/* {items.length > 0 &&  */}
-                    <button className="btn-clear-cart">
-                        <h4>Очистить</h4>
-                    </button>
+                    <img src='./icon_clear.png' alt="clear" title="Очистить корзину" className="btn-clear-cart"/>
                 </div>
 
                 {/* <div className="empty-cart-message">

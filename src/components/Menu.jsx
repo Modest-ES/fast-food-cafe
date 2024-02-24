@@ -2,14 +2,16 @@ import React from 'react';
 
 import foodItemsList from '../assets/foodItemsList.json';
 
-export default function Menu() {
-  const sortingCategories = ['По популярности', 'По алфавиту', 'По цене'];
-
-  const [currentSortingIndex, setCurrentSortingIndex] = React.useState(0);
+export default function Menu({currentSortingMode, functionChangeSortingMode}) {
+  const sortingCategories = [
+    {title: "По популярности", sortingParameter: "id"},
+    {title: "По алфавиту", sortingParameter: "title"},
+    {title: "По цене", sortingParameter: "price"}
+  ];
   const [sortingListVisible, setSortingListVisible] = React.useState(false);
 
   const sortingOptionClicked = (categoryIndex) => {
-    setCurrentSortingIndex(categoryIndex);
+    functionChangeSortingMode(categoryIndex);
     setSortingListVisible(false);
   }
 
@@ -33,8 +35,13 @@ export default function Menu() {
             <div className="sorting-list">
               <ul>
                 {
-                  sortingCategories.map((categoryTitle, categoryIndex) => (
-                    <li key={categoryIndex} onClick={() => sortingOptionClicked(categoryIndex)} className={currentSortingIndex === categoryIndex ? "chosen" : ""}>{categoryTitle}</li>
+                  sortingCategories.map((category, categoryIndex) => (
+                    <li 
+                    key={categoryIndex} 
+                    onClick={() => sortingOptionClicked(category.sortingParameter)}
+                    className={currentSortingMode === category.sortingParameter ? "chosen" : ""}>
+                      {category.title}
+                    </li>
                   ))
                 }
               </ul>

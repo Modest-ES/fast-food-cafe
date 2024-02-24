@@ -16,6 +16,7 @@ export default function Main() {
     const [contentIsLoading, setContentIsLoading] = React.useState(true);
     const [cartIsOpened, setCartIsOpened] = React.useState(false);
     const [sortingMode, setSortingMode] = React.useState("id");
+    const [searchData, setSearchData] = React.useState('');
   
     // React.useEffect(() => {
     //   fetch('https://65d8c66cc96fbb24c1bc47d2.mockapi.io/fooditems')
@@ -64,10 +65,10 @@ export default function Main() {
     return(
         <div className="mainshell">
             {cartIsOpened && <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
-            <Topbar onClickCart={() => setCartIsOpened(true)} />
+            <Topbar onClickCart={() => setCartIsOpened(true)} searchData={searchData} setSearchData={setSearchData}/>
             <div className="main-section">
-                <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />
-                {contentIsLoading ? (
+                {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
+                {contentIsLoading &&
                     <>
                         <h2>Загрузка...</h2>
                         <div className="food-section">
@@ -79,24 +80,52 @@ export default function Main() {
                         <FoodItemSkeleton />
                         </div>
                     </>
-                ) : (
-                foodItemsList.map((objCategory) => (sortFetchedData(objCategory))).map((objCategory) => (
-                    <div key={objCategory.categoryId}>
-                    <h2 id={objCategory.categoryTag}>{objCategory.categoryTitle}</h2>
+                }
+                {!searchData &&
+                    foodItemsList.map((objCategory) => (
+                        sortFetchedData(objCategory))).map((objCategory) => (
+                            <div key={objCategory.categoryId}>
+                            <h2 id={objCategory.categoryTag}>{objCategory.categoryTitle}</h2>
+                            <div className="food-section">
+                                {objCategory.itemsList.map((obj) => (
+                                <FoodItem
+                                    key={obj.id}
+                                    options={obj.options}
+                                    title={obj.title}
+                                    price={obj.price}
+                                    imgsrc={obj.imgsrc}
+                                />
+                                ))}
+                            </div>
+                            </div>
+                        ))
+                }
+                {searchData &&
+                    <>
+                    <h2>Поиск по запросу: "{searchData}"</h2>
                     <div className="food-section">
-                        {objCategory.itemsList.map((obj) => (
-                        <FoodItem
-                            key={obj.id}
-                            options={obj.options}
-                            title={obj.title}
-                            price={obj.price}
-                            imgsrc={obj.imgsrc}
-                        />
-                        ))}
+                        {foodItemsList.map((objCategory) => (
+                            sortFetchedData(objCategory))).map((objCategory) => (
+                                objCategory.itemsList.filter(
+                                    obj => {
+                                        if (obj.title.toLowerCase().includes(searchData.toLowerCase())) {
+                                            return true;
+                                        }
+                                        return false;
+                                    }).map((obj) => (
+                                <FoodItem
+                                    key={obj.id}
+                                    options={obj.options}
+                                    title={obj.title}
+                                    price={obj.price}
+                                    imgsrc={obj.imgsrc}
+                                />
+                                ))
+                            ))
+                        }
                     </div>
-                    </div>
-                ))
-                )}
+                    </>
+                }
             </div>
             <Bottombar />
             <ArrowIcon />

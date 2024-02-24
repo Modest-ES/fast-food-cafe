@@ -46,7 +46,7 @@ a {
   margin-bottom: 40px;
   border-radius: 25px;
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1170px) {
     width: 90vw;
     margin-left: 5vw;
     margin-top: 10px;
@@ -112,13 +112,13 @@ a {
       font-family: 'Roboto';
       margin-left: 5px;
       width: 200px;
-      @media (max-width: 1360px) {
+      @media (max-width: 1375px) {
         width: 150px;
       }
-      @media (max-width: 1280px) {
+      @media (max-width: 1295px) {
         width: 200px;
       }
-      @media (max-width: 910px) {
+      @media (max-width: 920px) {
         width: 100%;
       }
     }
@@ -180,26 +180,26 @@ a {
         font-size: 18px;
         margin: 0;
         color: black;
-        @media (max-width: 1280px) {
+        @media (max-width: 1295px) {
           font-size: 14px;
         }
-        @media (max-width: 1150px) {
+        @media (max-width: 1170px) {
           font-size: 18px;
         }
-        @media (max-width: 620px) {
+        @media (max-width: 630px) {
           font-size: 14px;
         }
       }
       h3 {
         color: $maincolor;
         margin: 0;
-        @media (max-width: 1280px) {
+        @media (max-width: 1295px) {
           font-size: 20px;
         }
-        @media (max-width: 1150px) {
+        @media (max-width: 1170px) {
           font-size: 35px;
         }
-        @media (max-width: 620px) {
+        @media (max-width: 630px) {
           font-size: 20px;
         }
       }
@@ -226,13 +226,13 @@ a {
       font-size: 18px;
       font-family: 'Roboto';
       margin: 0;
-      @media (max-width: 1280px) {
+      @media (max-width: 1295px) {
         font-size: 16px;
       }
-      @media (max-width: 1150px) {
+      @media (max-width: 1170px) {
         font-size: 18px;
       }
-      @media (max-width: 620px) {
+      @media (max-width: 630px) {
         font-size: 16px;
       }
     }
@@ -247,7 +247,7 @@ a {
       padding: 8px 14px;
       margin-left: 10px;
       transition: 0.3s;
-      @media (max-width: 460px) {
+      @media (max-width: 480px) {
         padding: 4px 7px;
       }
       &:hover {
@@ -256,14 +256,14 @@ a {
       img {
         width: 20px;
         margin-right: 8px;
-        @media (max-width: 460px) {
+        @media (max-width: 480px) {
           width: 16px;
         }
       }
       p {
         color: $background;
         font-size: 18px;
-        @media (max-width: 460px) {
+        @media (max-width: 480px) {
           font-size: 14px;
         }
       }

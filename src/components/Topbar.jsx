@@ -1,4 +1,6 @@
-export default function Topbar({onClickCart, searchData, setSearchData}) {
+import Searchbar from './Searchbar.jsx';
+
+export default function Topbar({onClickCart}) {
     return (
       <div className="topbar-shell">
         <div className="topbar">
@@ -9,15 +11,7 @@ export default function Topbar({onClickCart, searchData, setSearchData}) {
               <p>Доставка еды на дом</p>
             </div>
           </div>
-          <div className="search-block search-topbar">
-              <input placeholder="Поиск..." className="search-field" value={searchData} onChange={(event) => setSearchData(event.target.value)}/>
-
-              {searchData && 
-              <img width={18} height={18} src="./icon_cross.png" alt="Очистить поиск" title="Очистить поиск" className="search-button clear-search" onClick={() => setSearchData('')} />}
-
-              {!searchData && 
-              <img width={18} height={18} src="./icon_search.png" alt="Поиск" title="Введите запрос в поисковую строку" className="search-button" />}
-          </div>
+          <Searchbar classNameTags={"search-block search-topbar"} />
           <div className="cart-section">
             <div className="cart-button" title="Shopping Cart" onClick={onClickCart}>
               <p>12345 руб.</p>
@@ -28,15 +22,7 @@ export default function Topbar({onClickCart, searchData, setSearchData}) {
             </div>
           </div>
         </div>
-        <div className="search-block search-under-topbar">
-          <input placeholder="Поиск..." className="search-field" value={searchData} onChange={(event) => setSearchData(event.target.value)}/>
-
-          {searchData && 
-          <img width={18} height={18} src="./icon_cross.png" alt="Очистить поиск" title="Очистить поиск" className="search-button clear-search" onClick={() => setSearchData('')} />}
-
-          {!searchData && 
-          <img width={18} height={18} src="./icon_search.png" alt="Поиск" title="Введите запрос в поисковую строку" className="search-button" />}
-        </div>
+        <Searchbar classNameTags={"search-block search-under-topbar"} />
       </div>
     );
   }

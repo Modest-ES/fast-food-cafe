@@ -11,6 +11,8 @@ import FoodItemSkeleton from '../FoodItemSkeleton.jsx';
 import Bottombar from '../Bottombar.jsx';
 import CartOverlayShell from '../CartOverlayShell.jsx';
 
+export const SearchContext = React.createContext();
+
 export default function Main() {
     const [foodItemsList, setFoodItemsList] = React.useState([]);
     const [contentIsLoading, setContentIsLoading] = React.useState(true);
@@ -63,72 +65,77 @@ export default function Main() {
     }
 
     return(
-        <div className="mainshell">
-            {cartIsOpened && <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
-            <Topbar onClickCart={() => setCartIsOpened(true)} searchData={searchData} setSearchData={setSearchData}/>
-            <div className="main-section">
-                {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
-                {contentIsLoading &&
-                    <>
-                        <h2>Загрузка...</h2>
-                        <div className="food-section">
-                        <FoodItemSkeleton />
-                        <FoodItemSkeleton />
-                        <FoodItemSkeleton />
-                        <FoodItemSkeleton />
-                        <FoodItemSkeleton />
-                        <FoodItemSkeleton />
-                        </div>
-                    </>
-                }
-                {!searchData &&
-                    foodItemsList.map((objCategory) => (
-                        sortFetchedData(objCategory))).map((objCategory) => (
-                            <div key={objCategory.categoryId}>
-                            <h2 id={objCategory.categoryTag}>{objCategory.categoryTitle}</h2>
+        <SearchContext.Provider value={{searchData, setSearchData}}>
+            <div className="mainshell">
+                {cartIsOpened && 
+                <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
+
+                <Topbar onClickCart={() => setCartIsOpened(true)} />
+            
+                <div className="main-section">
+                    {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
+                    {contentIsLoading &&
+                        <>
+                            <h2>Загрузка...</h2>
                             <div className="food-section">
-                                {objCategory.itemsList.map((obj) => (
-                                <FoodItem
-                                    key={obj.id}
-                                    options={obj.options}
-                                    title={obj.title}
-                                    price={obj.price}
-                                    imgsrc={obj.imgsrc}
-                                />
-                                ))}
+                            <FoodItemSkeleton />
+                            <FoodItemSkeleton />
+                            <FoodItemSkeleton />
+                            <FoodItemSkeleton />
+                            <FoodItemSkeleton />
+                            <FoodItemSkeleton />
                             </div>
-                            </div>
-                        ))
-                }
-                {searchData &&
-                    <>
-                    <h2>Поиск по запросу: "{searchData}"</h2>
-                    <div className="food-section">
-                        {foodItemsList.map((objCategory) => (
+                        </>
+                    }
+                    {!searchData &&
+                        foodItemsList.map((objCategory) => (
                             sortFetchedData(objCategory))).map((objCategory) => (
-                                objCategory.itemsList.filter(
-                                    obj => {
-                                        if (obj.title.toLowerCase().includes(searchData.toLowerCase())) {
-                                            return true;
-                                        }
-                                        return false;
-                                    }).map((obj) => (
-                                <FoodItem
-                                    key={obj.id}
-                                    options={obj.options}
-                                    title={obj.title}
-                                    price={obj.price}
-                                    imgsrc={obj.imgsrc}
-                                />
-                                ))
+                                <div key={objCategory.categoryId}>
+                                <h2 id={objCategory.categoryTag}>{objCategory.categoryTitle}</h2>
+                                <div className="food-section">
+                                    {objCategory.itemsList.map((obj) => (
+                                    <FoodItem
+                                        key={obj.id}
+                                        options={obj.options}
+                                        title={obj.title}
+                                        price={obj.price}
+                                        imgsrc={obj.imgsrc}
+                                    />
+                                    ))}
+                                </div>
+                                </div>
                             ))
-                        }
-                    </div>
-                    </>
-                }
+                    }
+                    {searchData &&
+                        <>
+                        <h2>Поиск по запросу: "{searchData}"</h2>
+                        <div className="food-section">
+                            {foodItemsList.map((objCategory) => (
+                                sortFetchedData(objCategory))).map((objCategory) => (
+                                    objCategory.itemsList.filter(
+                                        obj => {
+                                            if (obj.title.toLowerCase().includes(searchData.toLowerCase())) {
+                                                return true;
+                                            }
+                                            return false;
+                                        }).map((obj) => (
+                                    <FoodItem
+                                        key={obj.id}
+                                        options={obj.options}
+                                        title={obj.title}
+                                        price={obj.price}
+                                        imgsrc={obj.imgsrc}
+                                    />
+                                    ))
+                                ))
+                            }
+                        </div>
+                        </>
+                    }
+                </div>
+                <Bottombar />
+                <ArrowIcon />
             </div>
-            <Bottombar />
-            <ArrowIcon />
-        </div>
+        </SearchContext.Provider>
     );
 };

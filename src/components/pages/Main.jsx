@@ -65,12 +65,16 @@ export default function Main() {
     }
 
     return(
-        <SearchContext.Provider value={{searchData, setSearchData}}>
+        <>
             <div className="mainshell">
                 {cartIsOpened && 
                 <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
 
-                <Topbar onClickCart={() => setCartIsOpened(true)} />
+                {/* <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} classNameTag={cartIsOpened ? "open-cart" : "close-cart"}/> */}
+
+                <SearchContext.Provider value={{searchData, setSearchData}}>
+                    <Topbar onClickCart={() => setCartIsOpened(true)} />
+                </SearchContext.Provider>
             
                 <div className="main-section">
                     {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
@@ -136,6 +140,6 @@ export default function Main() {
                 <Bottombar />
                 <ArrowIcon />
             </div>
-        </SearchContext.Provider>
+        </>
     );
 };

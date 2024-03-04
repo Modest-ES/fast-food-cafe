@@ -1,8 +1,22 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from "../redux/slices/cartSlice.js";
 
-export default function FoodItem({options, title, price, imgsrc}) {
+export default function FoodItem({id, options, title, imgsrc}) {
 
   const [currentFoodOption, setCurrentFoodOption] = React.useState(0);
+  const dispatch = useDispatch();
+
+  const onClickAddItem = () => {
+    const currentItem = {
+      id,
+      title,
+      price: options[currentFoodOption][1],
+      imgsrc,
+      option: options[currentFoodOption][0]
+    };
+    dispatch(addItem(currentItem));
+  }
     return (
       <div className="food-item">
         <img src={imgsrc} alt={title} title={title}/>
@@ -10,13 +24,14 @@ export default function FoodItem({options, title, price, imgsrc}) {
         <div className="food-item-options">
           {
             options.map((optionTitle, optionIndex) => (
-              <p key={optionIndex} onClick={() => setCurrentFoodOption(optionIndex)} className={currentFoodOption === optionIndex ? "chosen" : ""}>{optionTitle}</p>
+              <p key={optionIndex} onClick={() => setCurrentFoodOption(optionIndex)} className={currentFoodOption === optionIndex ? "chosen" : ""}>{optionTitle[0]}</p>
             ))
           }
         </div>
         <div className="food-item-bar">
-          <p>{price} руб.</p>
-          <div className="food-item-buy-button">
+          <p>{options[currentFoodOption][1]} руб.</p>
+          <div className="food-item-buy-button"
+          onClick={onClickAddItem}>
             <p>Выбрать</p>
           </div>
         </div>

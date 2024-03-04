@@ -9,11 +9,22 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
     {title: "По цене", sortingParameter: "price"}
   ];
   const [sortingListVisible, setSortingListVisible] = React.useState(false);
+  const sortingRef = React.useRef();
 
   const sortingOptionClicked = (categoryIndex) => {
     functionChangeSortingMode(categoryIndex);
     setSortingListVisible(false);
   }
+
+  React.useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!sortingRef.current.contains(e.target)) {
+        setSortingListVisible(false);
+      }
+    };
+    document.body.addEventListener('click', handleClickOutside);
+    return () => document.body.removeEventListener('click', handleClickOutside);
+  }, []);
 
     return (
       <div className="menu">
@@ -26,7 +37,7 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
             ))}
           </ul>
         </div>
-        <div className="sorting">
+        <div ref={sortingRef} className="sorting">
           <div className="sorting-button">
             <img src="./icon_sorting.png" alt="Sort icon" />
             <p onClick={() => setSortingListVisible(!sortingListVisible)}>Отсортировать:</p>

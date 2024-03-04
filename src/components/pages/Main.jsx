@@ -19,17 +19,7 @@ export default function Main() {
     const [cartIsOpened, setCartIsOpened] = React.useState(false);
     const [sortingMode, setSortingMode] = React.useState("id");
     const [searchData, setSearchData] = React.useState('');
-  
-    // React.useEffect(() => {
-    //   fetch('https://65d8c66cc96fbb24c1bc47d2.mockapi.io/fooditems')
-    //     .then((fetchdata) => {
-    //       return fetchdata.json();
-    //     })
-    //     .then((jsondata) => {
-    //       setFoodItemsList(jsondata);
-    //     });
-    // }, []);
-  
+    
     React.useEffect(() => {
       setTimeout(() => {
         axios.get(`https://65d8c66cc96fbb24c1bc47d2.mockapi.io/fooditems`).then((response) => {
@@ -43,7 +33,7 @@ export default function Main() {
         let sortedList;
         if (sortingMode === "price") {
             sortedList = fetchedData.itemsList.sort(function(a, b) {
-                return a.price - b.price;
+                return a.options[0][1] - b.options[0][1];
             })
         } else {
             if (sortingMode === "title") {
@@ -100,10 +90,7 @@ export default function Main() {
                                     {objCategory.itemsList.map((obj) => (
                                     <FoodItem
                                         key={obj.id}
-                                        options={obj.options}
-                                        title={obj.title}
-                                        price={obj.price}
-                                        imgsrc={obj.imgsrc}
+                                        {...obj}
                                     />
                                     ))}
                                 </div>

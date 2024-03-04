@@ -1,6 +1,9 @@
 import Searchbar from './Searchbar.jsx';
+import { useSelector } from 'react-redux';
 
 export default function Topbar({onClickCart}) {
+  const {totalPrice, totalAmount} = useSelector(state => state.cart);
+  
     return (
       <div className="topbar-shell">
         <div className="topbar">
@@ -14,10 +17,10 @@ export default function Topbar({onClickCart}) {
           <Searchbar classNameTags={"search-block search-topbar"} />
           <div className="cart-section">
             <div className="cart-button" title="Shopping Cart" onClick={onClickCart}>
-              <p>12345 руб.</p>
+              <p>{totalPrice} руб.</p>
               <div className="cart-button-icon">
                 <img src="./icon_shoppingcart.png" alt="Cart" />
-                <p>20</p>
+                <p>{totalAmount}</p>
               </div>
             </div>
           </div>

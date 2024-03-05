@@ -1,321 +1,763 @@
 [
     {
-        "categoryId": 0,
-        "categoryTag": "tag-burgers",
-        "categoryTitle": "Бургеры",
-        "itemsList": [{
-            "id": 0,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Чикен\"",
-            "price": 360,
-            "imgsrc": "./htmlsrcphotos/burger_chicken.png"
+      "categoryId": 0,
+      "categoryTag": "tag-burgers",
+      "categoryTitle": "Бургеры",
+      "itemsList": [
+        {
+          "id": 0,
+          "options": [
+            [
+              "Стандартный",
+              360
+            ],
+            [
+              "Острый",
+              365
+            ]
+          ],
+          "title": "Бургер \"Чикен\"",
+          "imgsrc": "./htmlsrcphotos/burger_chicken.png"
         },
         {
-            "id": 1,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Пепперони\"",
-            "price": 440,
-            "imgsrc": "./htmlsrcphotos/burger_pepperoni.png"
+          "id": 1,
+          "options": [
+            [
+              "Стандартный",
+              440
+            ],
+            [
+              "Острый",
+              445
+            ]
+          ],
+          "title": "Бургер \"Пепперони\"",
+          "imgsrc": "./htmlsrcphotos/burger_pepperoni.png"
         },
         {
-            "id": 2,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Классик\"",
-            "price": 320,
-            "imgsrc": "./htmlsrcphotos/burger_classic.png"
+          "id": 2,
+          "options": [
+            [
+              "Стандартный",
+              320
+            ],
+            [
+              "Острый",
+              325
+            ]
+          ],
+          "title": "Бургер \"Классик\"",
+          "imgsrc": "./htmlsrcphotos/burger_classic.png"
         },
         {
-            "id": 3,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Бекон\"",
-            "price": 410,
-            "imgsrc": "./htmlsrcphotos/burger_bacon.png"
+          "id": 3,
+          "options": [
+            [
+              "Стандартный",
+              410
+            ],
+            [
+              "Острый",
+              415
+            ]
+          ],
+          "title": "Бургер \"Бекон\"",
+          "imgsrc": "./htmlsrcphotos/burger_bacon.png"
         },
         {
-            "id": 4,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Барбекю\"",
-            "price": 380,
-            "imgsrc": "./htmlsrcphotos/burger_bbq.png"
+          "id": 4,
+          "options": [
+            [
+              "Стандартный",
+              380
+            ],
+            [
+              "Острый",
+              385
+            ]
+          ],
+          "title": "Бургер \"Барбекю\"",
+          "imgsrc": "./htmlsrcphotos/burger_bbq.png"
         },
         {
-            "id": 5,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Красный лук\"",
-            "price": 310,
-            "imgsrc": "./htmlsrcphotos/burger_redonion.png"
+          "id": 5,
+          "options": [
+            [
+              "Стандартный",
+              310
+            ],
+            [
+              "Острый",
+              315
+            ]
+          ],
+          "title": "Бургер \"Красный лук\"",
+          "imgsrc": "./htmlsrcphotos/burger_redonion.png"
         },
         {
-            "id": 6,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Чикен Делюкс\"",
-            "price": 400,
-            "imgsrc": "./htmlsrcphotos/burger_chickendeluxe.png"
+          "id": 6,
+          "options": [
+            [
+              "Стандартный",
+              400
+            ],
+            [
+              "Острый",
+              405
+            ]
+          ],
+          "title": "Бургер \"Чикен Делюкс\"",
+          "imgsrc": "./htmlsrcphotos/burger_chickendeluxe.png"
         },
         {
-            "id": 7,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Грибной\"",
-            "price": 290,
-            "imgsrc": "./htmlsrcphotos/burger_mushroom.png"
+          "id": 7,
+          "options": [
+            [
+              "Стандартный",
+              290
+            ],
+            [
+              "Острый",
+              295
+            ]
+          ],
+          "title": "Бургер \"Грибной\"",
+          "imgsrc": "./htmlsrcphotos/burger_mushroom.png"
         },
         {
-            "id": 8,
-            "options": ["Стандартный", "Острый"],
-            "title": "Бургер \"Вегетарианский\"",
-            "price": 300,
-            "imgsrc": "./htmlsrcphotos/burger_vegetarian.png"
-        }]
+          "id": 8,
+          "options": [
+            [
+              "Стандартный",
+              300
+            ],
+            [
+              "Острый",
+              305
+            ]
+          ],
+          "title": "Бургер \"Вегетарианский\"",
+          "imgsrc": "./htmlsrcphotos/burger_vegetarian.png"
+        }
+      ]
     },
     {
-        "categoryId": 1,
-        "categoryTag": "tag-pizza",
-        "categoryTitle": "Пицца",
-        "itemsList": [{
-            "id": 0,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Бекон\"",
-            "price": 700,
-            "imgsrc": "./htmlsrcphotos/pizza_bacon.png"
+      "categoryId": 1,
+      "categoryTag": "tag-pizza",
+      "categoryTitle": "Пицца",
+      "itemsList": [
+        {
+          "id": 0,
+          "options": [
+            [
+              "25 см",
+              570
+            ],
+            [
+              "30 см",
+              700
+            ],
+            [
+              "35 см",
+              900
+            ]
+          ],
+          "title": "Пицца \"Бекон\"",
+          "imgsrc": "./htmlsrcphotos/pizza_bacon.png"
         },
         {
-            "id": 1,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Пепперони\"",
-            "price": 550,
-            "imgsrc": "./htmlsrcphotos/pizza_pepperoni.png"
+          "id": 1,
+          "options": [
+            [
+              "25 см",
+              430
+            ],
+            [
+              "30 см",
+              550
+            ],
+            [
+              "35 см",
+              710
+            ]
+          ],
+          "title": "Пицца \"Пепперони\"",
+          "imgsrc": "./htmlsrcphotos/pizza_pepperoni.png"
         },
         {
-            "id": 2,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Чикен\"",
-            "price": 650,
-            "imgsrc": "./htmlsrcphotos/pizza_chicken.png"
+          "id": 2,
+          "options": [
+            [
+              "25 см",
+              515
+            ],
+            [
+              "30 см",
+              650
+            ],
+            [
+              "35 см",
+              830
+            ]
+          ],
+          "title": "Пицца \"Чикен\"",
+          "imgsrc": "./htmlsrcphotos/pizza_chicken.png"
         },
         {
-            "id": 3,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Блю-Чиз\"",
-            "price": 770,
-            "imgsrc": "./htmlsrcphotos/pizza_bluecheese.png"
+          "id": 3,
+          "options": [
+            [
+              "25 см",
+              550
+            ],
+            [
+              "30 см",
+              690
+            ],
+            [
+              "35 см",
+              890
+            ]
+          ],
+          "title": "Пицца \"Блю-Чиз\"",
+          "imgsrc": "./htmlsrcphotos/pizza_bluecheese.png"
         },
         {
-            "id": 4,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Детройт\"",
-            "price": 720,
-            "imgsrc": "./htmlsrcphotos/pizza_detroitstyle.png"
+          "id": 4,
+          "options": [
+            [
+              "25 см",
+              590
+            ],
+            [
+              "30 см",
+              720
+            ],
+            [
+              "35 см",
+              930
+            ]
+          ],
+          "title": "Пицца \"Детройт\"",
+          "imgsrc": "./htmlsrcphotos/pizza_detroitstyle.png"
         },
         {
-            "id": 5,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Грибная\"",
-            "price": 640,
-            "imgsrc": "./htmlsrcphotos/pizza_mushroom.png"
+          "id": 5,
+          "options": [
+            [
+              "25 см",
+              480
+            ],
+            [
+              "30 см",
+              640
+            ],
+            [
+              "35 см",
+              820
+            ]
+          ],
+          "title": "Пицца \"Грибная\"",
+          "imgsrc": "./htmlsrcphotos/pizza_mushroom.png"
         },
         {
-            "id": 6,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Гавайская\"",
-            "price": 630,
-            "imgsrc": "./htmlsrcphotos/pizza_hawaiian.png"
+          "id": 6,
+          "options": [
+            [
+              "25 см",
+              470
+            ],
+            [
+              "30 см",
+              630
+            ],
+            [
+              "35 см",
+              780
+            ]
+          ],
+          "title": "Пицца \"Гавайская\"",
+          "imgsrc": "./htmlsrcphotos/pizza_hawaiian.png"
         },
         {
-            "id": 7,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Барбекю\"",
-            "price": 810,
-            "imgsrc": "./htmlsrcphotos/pizza_bbq.png"
+          "id": 7,
+          "options": [
+            [
+              "25 см",
+              640
+            ],
+            [
+              "30 см",
+              810
+            ],
+            [
+              "35 см",
+              980
+            ]
+          ],
+          "title": "Пицца \"Барбекю\"",
+          "imgsrc": "./htmlsrcphotos/pizza_bbq.png"
         },
         {
-            "id": 8,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Вегетарианская\"",
-            "price": 540,
-            "imgsrc": "./htmlsrcphotos/pizza_vegetarian.png"
+          "id": 8,
+          "options": [
+            [
+              "25 см",
+              390
+            ],
+            [
+              "30 см",
+              540
+            ],
+            [
+              "35 см",
+              690
+            ]
+          ],
+          "title": "Пицца \"Вегетарианская\"",
+          "imgsrc": "./htmlsrcphotos/pizza_vegetarian.png"
         },
         {
-            "id": 9,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Сырная Пепперони\"",
-            "price": 680,
-            "imgsrc": "./htmlsrcphotos/pizza_cheesepepperoni.png"
+          "id": 9,
+          "options": [
+            [
+              "25 см",
+              525
+            ],
+            [
+              "30 см",
+              680
+            ],
+            [
+              "35 см",
+              850
+            ]
+          ],
+          "title": "Пицца \"Сырная Пепперони\"",
+          "imgsrc": "./htmlsrcphotos/pizza_cheesepepperoni.png"
         },
         {
-            "id": 10,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Мясная\"",
-            "price": 740,
-            "imgsrc": "./htmlsrcphotos/pizza_groundbeef.png"
+          "id": 10,
+          "options": [
+            [
+              "25 см",
+              600
+            ],
+            [
+              "30 см",
+              740
+            ],
+            [
+              "35 см",
+              950
+            ]
+          ],
+          "title": "Пицца \"Мясная\"",
+          "imgsrc": "./htmlsrcphotos/pizza_groundbeef.png"
         },
         {
-            "id": 11,
-            "options": ["25 см", "30 см", "35 см"],
-            "title": "Пицца \"Ветчина и сыр\"",
-            "price": 710,
-            "imgsrc": "./htmlsrcphotos/pizza_ham.png"
-        }]
+          "id": 11,
+          "options": [
+            [
+              "25 см",
+              575
+            ],
+            [
+              "30 см",
+              710
+            ],
+            [
+              "35 см",
+              910
+            ]
+          ],
+          "title": "Пицца \"Ветчина и сыр\"",
+          "imgsrc": "./htmlsrcphotos/pizza_ham.png"
+        }
+      ]
     },
     {
-        "categoryId": 2,
-        "categoryTag": "tag-snacks",
-        "categoryTitle": "Закуски",
-        "itemsList": [{
-            "id": 0,
-            "options": [],
-            "title": "Куриные крылышки",
-            "price": 250,
-            "imgsrc": "./htmlsrcphotos/snack_chickenwings.png"
+      "categoryId": 2,
+      "categoryTag": "tag-snacks",
+      "categoryTitle": "Закуски",
+      "itemsList": [
+        {
+          "id": 0,
+          "options": [
+            [
+              "3 шт.",
+              140
+            ],
+            [
+              "6 шт.",
+              245
+            ],
+            [
+              "9 шт.",
+              355
+            ]
+          ],
+          "title": "Куриные крылышки",
+          "imgsrc": "./htmlsrcphotos/snack_chickenwings.png"
         },
         {
-            "id": 1,
-            "options": [],
-            "title": "Куриные наггетсы",
-            "price": 210,
-            "imgsrc": "./htmlsrcphotos/snack_chickennuggets.png"
+          "id": 1,
+          "options": [
+            [
+              "3 шт.",
+              130
+            ],
+            [
+              "6 шт.",
+              210
+            ],
+            [
+              "9 шт.",
+              300
+            ]
+          ],
+          "title": "Куриные наггетсы",
+          "imgsrc": "./htmlsrcphotos/snack_chickennuggets.png"
         },
         {
-            "id": 2,
-            "options": [],
-            "title": "Куриные филе",
-            "price": 230,
-            "imgsrc": "./htmlsrcphotos/snack_chickenfilets.png"
+          "id": 2,
+          "options": [
+            [
+              "3 шт.",
+              135
+            ],
+            [
+              "6 шт.",
+              230
+            ],
+            [
+              "9 шт.",
+              330
+            ]
+          ],
+          "title": "Куриные филе",
+          "imgsrc": "./htmlsrcphotos/snack_chickenfilets.png"
         },
         {
-            "id": 3,
-            "options": [],
-            "title": "Картофель фри",
-            "price": 170,
-            "imgsrc": "./htmlsrcphotos/snack_fries.png"
+          "id": 3,
+          "options": [
+            [
+              "Мал.",
+              110
+            ],
+            [
+              "Сред.",
+              170
+            ],
+            [
+              "Бол.",
+              220
+            ]
+          ],
+          "title": "Картофель фри",
+          "imgsrc": "./htmlsrcphotos/snack_fries.png"
         },
         {
-            "id": 4,
-            "options": [],
-            "title": "Сырные шарики",
-            "price": 240,
-            "imgsrc": "./htmlsrcphotos/snack_cheeseballs.png"
+          "id": 4,
+          "options": [
+            [
+              "3 шт.",
+              145
+            ],
+            [
+              "6 шт.",
+              250
+            ],
+            [
+              "9 шт.",
+              360
+            ]
+          ],
+          "title": "Сырные шарики",
+          "imgsrc": "./htmlsrcphotos/snack_cheeseballs.png"
         },
         {
-            "id": 5,
-            "options": [],
-            "title": "Паста Карбонара",
-            "price": 280,
-            "imgsrc": "./htmlsrcphotos/snack_carbonara.png"
-        }]
+          "id": 5,
+          "options": [
+            [
+              "Мал.",
+              200
+            ],
+            [
+              "Сред.",
+              280
+            ],
+            [
+              "Бол.",
+              390
+            ]
+          ],
+          "title": "Паста Карбонара",
+          "imgsrc": "./htmlsrcphotos/snack_carbonara.png"
+        }
+      ]
     },
     {
-        "categoryId": 3,
-        "categoryTag": "tag-desserts",
-        "categoryTitle": "Десерты",
-        "itemsList": [{
-            "id": 0,
-            "options": [],
-            "title": "Чизкейк",
-            "price": 180,
-            "imgsrc": "./htmlsrcphotos/dessert_cheesecake.png"
+      "categoryId": 3,
+      "categoryTag": "tag-desserts",
+      "categoryTitle": "Десерты",
+      "itemsList": [
+        {
+          "id": 0,
+          "options": [
+            [
+              "Мал.",
+              180
+            ],
+            [
+              "Бол.",
+              320
+            ]
+          ],
+          "title": "Чизкейк",
+          "imgsrc": "./htmlsrcphotos/dessert_cheesecake.png"
         },
         {
-            "id": 1,
-            "options": [],
-            "title": "Шоколадный торт",
-            "price": 170,
-            "imgsrc": "./htmlsrcphotos/dessert_chocolatecake.png"
+          "id": 1,
+          "options": [
+            [
+              "Мал.",
+              170
+            ],
+            [
+              "Бол.",
+              310
+            ]
+          ],
+          "title": "Шоколадный торт",
+          "imgsrc": "./htmlsrcphotos/dessert_chocolatecake.png"
         },
         {
-            "id": 2,
-            "options": [],
-            "title": "Клубничное мороженое",
-            "price": 120,
-            "imgsrc": "./htmlsrcphotos/dessert_strawberryicecream.png"
+          "id": 2,
+          "options": [
+            [
+              "Мал.",
+              120
+            ],
+            [
+              "Бол.",
+              190
+            ]
+          ],
+          "title": "Клубничное мороженое",
+          "imgsrc": "./htmlsrcphotos/dessert_strawberryicecream.png"
         },
         {
-            "id": 3,
-            "options": [],
-            "title": "Торт \"Красный Бархат\"",
-            "price": 165,
-            "imgsrc": "./htmlsrcphotos/dessert_redvelvetcake.png"
+          "id": 3,
+          "options": [
+            [
+              "Мал.",
+              165
+            ],
+            [
+              "Бол.",
+              305
+            ]
+          ],
+          "title": "Торт \"Красный Бархат\"",
+          "imgsrc": "./htmlsrcphotos/dessert_redvelvetcake.png"
         },
         {
-            "id": 4,
-            "options": [],
-            "title": "Шоколадное мороженое",
-            "price": 125,
-            "imgsrc": "./htmlsrcphotos/dessert_chocolateicecream.png"
+          "id": 4,
+          "options": [
+            [
+              "Мал.",
+              125
+            ],
+            [
+              "Бол.",
+              195
+            ]
+          ],
+          "title": "Шоколадное мороженое",
+          "imgsrc": "./htmlsrcphotos/dessert_chocolateicecream.png"
         },
         {
-            "id": 5,
-            "options": [],
-            "title": "Ванильное мороженое",
-            "price": 115,
-            "imgsrc": "./htmlsrcphotos/dessert_vanillaicecream.png"
+          "id": 5,
+          "options": [
+            [
+              "Мал.",
+              115
+            ],
+            [
+              "Бол.",
+              185
+            ]
+          ],
+          "title": "Ванильное мороженое",
+          "imgsrc": "./htmlsrcphotos/dessert_vanillaicecream.png"
         },
         {
-            "id": 6,
-            "options": [],
-            "title": "Фисташковый торт",
-            "price": 150,
-            "imgsrc": "./htmlsrcphotos/dessert_pistacchiocake.png"
+          "id": 6,
+          "options": [
+            [
+              "Мал.",
+              150
+            ],
+            [
+              "Бол.",
+              285
+            ]
+          ],
+          "title": "Фисташковый торт",
+          "imgsrc": "./htmlsrcphotos/dessert_pistacchiocake.png"
         },
         {
-            "id": 7,
-            "options": [],
-            "title": "Булочка с корицей",
-            "price": 100,
-            "imgsrc": "./htmlsrcphotos/dessert_cinnamonbun.png"
+          "id": 7,
+          "options": [
+            [
+              "Мал.",
+              100
+            ],
+            [
+              "Бол.",
+              160
+            ]
+          ],
+          "title": "Булочка с корицей",
+          "imgsrc": "./htmlsrcphotos/dessert_cinnamonbun.png"
         },
         {
-            "id": 8,
-            "options": [],
-            "title": "Торт \"Лесной орех\"",
-            "price": 145,
-            "imgsrc": "./htmlsrcphotos/dessert_hazelnutcake.png"
-        }]
+          "id": 8,
+          "options": [
+            [
+              "Мал.",
+              145
+            ],
+            [
+              "Бол.",
+              275
+            ]
+          ],
+          "title": "Торт \"Лесной орех\"",
+          "imgsrc": "./htmlsrcphotos/dessert_hazelnutcake.png"
+        }
+      ]
     },
     {
-        "categoryId": 4,
-        "categoryTag": "tag-drinks",
-        "categoryTitle": "Напитки",
-        "itemsList": [{
-            "id": 0,
-            "options": [],
-            "title": "Апельсиновый лимонад",
-            "price": 120,
-            "imgsrc": "./htmlsrcphotos/drink_orangesoda.png"
+      "categoryId": 4,
+      "categoryTag": "tag-drinks",
+      "categoryTitle": "Напитки",
+      "itemsList": [
+        {
+          "id": 0,
+          "options": [
+            [
+              "0.3 л",
+              80
+            ],
+            [
+              "0.5 л",
+              120
+            ],
+            [
+              "0.7 л",
+              160
+            ]
+          ],
+          "title": "Апельсиновый лимонад",
+          "imgsrc": "./htmlsrcphotos/drink_orangesoda.png"
         },
         {
-            "id": 1,
-            "options": [],
-            "title": "Кола",
-            "price": 130,
-            "imgsrc": "./htmlsrcphotos/drink_cola.png"
+          "id": 1,
+          "options": [
+            [
+              "0.3 л",
+              90
+            ],
+            [
+              "0.5 л",
+              130
+            ],
+            [
+              "0.7 л",
+              170
+            ]
+          ],
+          "title": "Кола",
+          "imgsrc": "./htmlsrcphotos/drink_cola.png"
         },
         {
-            "id": 2,
-            "options": [],
-            "title": "Клубничный лимонад",
-            "price": 135,
-            "imgsrc": "./htmlsrcphotos/drink_strawberrysoda.png"
+          "id": 2,
+          "options": [
+            [
+              "0.3 л",
+              95
+            ],
+            [
+              "0.5 л",
+              135
+            ],
+            [
+              "0.7 л",
+              175
+            ]
+          ],
+          "title": "Клубничный лимонад",
+          "imgsrc": "./htmlsrcphotos/drink_strawberrysoda.png"
         },
         {
-            "id": 3,
-            "options": [],
-            "title": "Тархун",
-            "price": 115,
-            "imgsrc": "./htmlsrcphotos/drink_tarkhun.png"
+          "id": 3,
+          "options": [
+            [
+              "0.3 л",
+              75
+            ],
+            [
+              "0.5 л",
+              115
+            ],
+            [
+              "0.7 л",
+              155
+            ]
+          ],
+          "title": "Тархун",
+          "imgsrc": "./htmlsrcphotos/drink_tarkhun.png"
         },
         {
-            "id": 4,
-            "options": [],
-            "title": "Черничный лимонад",
-            "price": 125,
-            "imgsrc": "./htmlsrcphotos/drink_blueberrysoda.png"
+          "id": 4,
+          "options": [
+            [
+              "0.3 л",
+              85
+            ],
+            [
+              "0.5 л",
+              125
+            ],
+            [
+              "0.7 л",
+              165
+            ]
+          ],
+          "title": "Черничный лимонад",
+          "imgsrc": "./htmlsrcphotos/drink_blueberrysoda.png"
         },
         {
-            "id": 5,
-            "options": [],
-            "title": "Классический лимонад",
-            "price": 110,
-            "imgsrc": "./htmlsrcphotos/drink_lemonade.png"
-        }]
+          "id": 5,
+          "options": [
+            [
+              "0.3 л",
+              70
+            ],
+            [
+              "0.5 л",
+              110
+            ],
+            [
+              "0.7 л",
+              150
+            ]
+          ],
+          "title": "Классический лимонад",
+          "imgsrc": "./htmlsrcphotos/drink_lemonade.png"
+        }
+      ]
     }
-]
+  ]

@@ -5,7 +5,7 @@ export default function Topbar({onClickCart}) {
   const {totalPrice, totalAmount} = useSelector(state => state.cart);
   
     return (
-      <div className="topbar-shell">
+      <header className="topbar-shell">
         <div className="topbar">
           <div className="logo-section">
             <img src="./favicon_light.png" alt="Logo" />
@@ -26,6 +26,6 @@ export default function Topbar({onClickCart}) {
           </div>
         </div>
         <Searchbar classNameTags={"search-block search-under-topbar"} />
-      </div>
+      </header>
     );
   }

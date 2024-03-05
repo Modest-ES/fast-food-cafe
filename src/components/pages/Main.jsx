@@ -6,10 +6,11 @@ import axios from 'axios';
 import ArrowIcon from '../ArrowIcon.jsx';
 import Topbar from '../Topbar.jsx';
 import Menu from '../Menu.jsx';
-import FoodItem from '../FoodItem.jsx';
 import FoodItemSkeleton from '../FoodItemSkeleton.jsx';
 import Bottombar from '../Bottombar.jsx';
 import CartOverlayShell from '../CartOverlayShell.jsx';
+import ItemCategory from '../ItemCategory.jsx';
+import SearchResultCategory from '../SearchResultCategory.jsx';
 
 export const SearchContext = React.createContext();
 
@@ -84,17 +85,7 @@ export default function Main() {
                     {!searchData &&
                         foodItemsList.map((objCategory) => (
                             sortFetchedData(objCategory))).map((objCategory) => (
-                                <div key={objCategory.categoryId}>
-                                <h2 id={objCategory.categoryTag}>{objCategory.categoryTitle}</h2>
-                                <div className="food-section">
-                                    {objCategory.itemsList.map((obj) => (
-                                    <FoodItem
-                                        key={obj.id}
-                                        {...obj}
-                                    />
-                                    ))}
-                                </div>
-                                </div>
+                                <ItemCategory objCategory={objCategory}/>
                             ))
                     }
                     {searchData &&
@@ -103,21 +94,7 @@ export default function Main() {
                         <div className="food-section">
                             {foodItemsList.map((objCategory) => (
                                 sortFetchedData(objCategory))).map((objCategory) => (
-                                    objCategory.itemsList.filter(
-                                        obj => {
-                                            if (obj.title.toLowerCase().includes(searchData.toLowerCase())) {
-                                                return true;
-                                            }
-                                            return false;
-                                        }).map((obj) => (
-                                    <FoodItem
-                                        key={obj.id}
-                                        options={obj.options}
-                                        title={obj.title}
-                                        price={obj.price}
-                                        imgsrc={obj.imgsrc}
-                                    />
-                                    ))
+                                    <SearchResultCategory searchData={searchData} objCategory={objCategory} />
                                 ))
                             }
                         </div>

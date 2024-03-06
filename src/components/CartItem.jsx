@@ -1,3 +1,6 @@
+
+// Карточка товара внутри корзины
+
 import { useDispatch } from "react-redux";
 import { addItem, minusItem, deleteItem } from "../redux/slices/cartSlice";
 

@@ -1,3 +1,6 @@
+
+// Поисковая строка
+
 import React from 'react';
 
 import { SearchContext } from "./pages/Main";

@@ -1,3 +1,6 @@
+
+// Вспомогательная 404-страница 
+
 import '../../scss/app.scss';
 
 import React from 'react';

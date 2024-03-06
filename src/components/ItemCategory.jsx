@@ -1,3 +1,6 @@
+
+// Категория товаров основной страницы
+
 import FoodItem from '../components/FoodItem.jsx';
 
 export default function ItemCategory ({objCategory}) {

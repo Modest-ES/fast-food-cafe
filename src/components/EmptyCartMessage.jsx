@@ -1,5 +1,7 @@
+
+// Сообщение при отсутствии товаров в корзине
+
 export default function EmptyCartMessage() {
-    
     return (
         <div className="empty-cart-message">
             <h1>Пусто</h1>

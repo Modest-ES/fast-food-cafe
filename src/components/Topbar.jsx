@@ -1,3 +1,6 @@
+
+// Шапка страницы
+
 import Searchbar from './Searchbar.jsx';
 import { useSelector } from 'react-redux';
 

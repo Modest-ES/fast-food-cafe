@@ -28,7 +28,7 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
 
     return (
       <div className="menu">
-        <div className="navigation">
+        <nav className="navigation">
           <ul>
             {foodItemsList.map((obj)=>(
               <li key={obj.categoryId}>
@@ -36,7 +36,7 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
         <div ref={sortingRef} className="sorting">
           <div className="sorting-button">
             <img src="./icon_sorting.png" alt="Sort icon" />

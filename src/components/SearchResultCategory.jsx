@@ -1,3 +1,6 @@
+
+// Категория товаров, найденных через поисковую строку
+
 import FoodItem from '../components/FoodItem.jsx';
 
 export default function ItemCategory ({searchData, objCategory}) {

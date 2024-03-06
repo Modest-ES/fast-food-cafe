@@ -1,3 +1,6 @@
+
+// Кнопка возвращения наверх страницы
+
 export default function ArrowIcon() {
   return (
     <div className="arrow_icon">

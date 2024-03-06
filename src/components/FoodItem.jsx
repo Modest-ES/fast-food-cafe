@@ -1,3 +1,6 @@
+
+// Карточка товара внутри категории
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from "../redux/slices/cartSlice.js";

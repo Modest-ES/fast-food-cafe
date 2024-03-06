@@ -1,3 +1,6 @@
+
+// Корзина и её обёртка
+
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../redux/slices/cartSlice.js';

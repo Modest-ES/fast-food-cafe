@@ -1,3 +1,6 @@
+
+// Основная / корневая страница сайта
+
 import '../../scss/app.scss';
 
 import React from 'react';
@@ -6,21 +9,22 @@ import axios from 'axios';
 import ArrowIcon from '../ArrowIcon.jsx';
 import Topbar from '../Topbar.jsx';
 import Menu from '../Menu.jsx';
-import FoodItemSkeleton from '../FoodItemSkeleton.jsx';
 import Bottombar from '../Bottombar.jsx';
 import CartOverlayShell from '../CartOverlayShell.jsx';
 import ItemCategory from '../ItemCategory.jsx';
 import SearchResultCategory from '../SearchResultCategory.jsx';
+import SkeletonSection from '../SkeletonSection.jsx';
 
 export const SearchContext = React.createContext();
 
 export default function Main() {
-    const [foodItemsList, setFoodItemsList] = React.useState([]);
-    const [contentIsLoading, setContentIsLoading] = React.useState(true);
-    const [cartIsOpened, setCartIsOpened] = React.useState(false);
-    const [sortingMode, setSortingMode] = React.useState("id");
-    const [searchData, setSearchData] = React.useState('');
+    const [foodItemsList, setFoodItemsList] = React.useState([]); // список всех товаров
+    const [contentIsLoading, setContentIsLoading] = React.useState(true); // статус состояния загрузки информации с бэкенда (загружается / нет)
+    const [cartIsOpened, setCartIsOpened] = React.useState(false); // статус открытия корзины (открыта / нет)
+    const [sortingMode, setSortingMode] = React.useState("id"); // тип сортировки товаров (id = по популярности / price = по цене / title = по алфавиту)
+    const [searchData, setSearchData] = React.useState(''); // данные поля ввода поисковой строки
     
+    // Реализация запроса данных с бэкенда
     React.useEffect(() => {
       setTimeout(() => {
         axios.get(`https://65d8c66cc96fbb24c1bc47d2.mockapi.io/fooditems`).then((response) => {
@@ -30,6 +34,7 @@ export default function Main() {
       }, 1);
     }, []);
 
+    // Сортировка списка товаров
     const sortFetchedData = (fetchedData) => {
         let sortedList;
         if (sortingMode === "price") {
@@ -56,40 +61,31 @@ export default function Main() {
     }
 
     return(
-        <>
-            <div className="mainshell">
-                {cartIsOpened && 
-                <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
+        <div className="mainshell">
 
-                {/* <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} classNameTag={cartIsOpened ? "open-cart" : "close-cart"}/> */}
+            {cartIsOpened && 
+            <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
 
-                <SearchContext.Provider value={{searchData, setSearchData}}>
-                    <Topbar onClickCart={() => setCartIsOpened(true)} />
-                </SearchContext.Provider>
-            
-                <div className="main-section">
-                    {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
-                    {contentIsLoading &&
-                        <>
-                            <h2>Загрузка...</h2>
-                            <div className="food-section">
-                            <FoodItemSkeleton />
-                            <FoodItemSkeleton />
-                            <FoodItemSkeleton />
-                            <FoodItemSkeleton />
-                            <FoodItemSkeleton />
-                            <FoodItemSkeleton />
-                            </div>
-                        </>
-                    }
-                    {!searchData &&
-                        foodItemsList.map((objCategory) => (
-                            sortFetchedData(objCategory))).map((objCategory) => (
-                                <ItemCategory objCategory={objCategory}/>
-                            ))
-                    }
-                    {searchData &&
-                        <>
+            <SearchContext.Provider value={{searchData, setSearchData}}>
+                <Topbar onClickCart={() => setCartIsOpened(true)} />
+            </SearchContext.Provider>
+        
+            <div className="main-section">
+                {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
+
+                {contentIsLoading &&
+                    <SkeletonSection />
+                }
+
+                {!searchData &&
+                    foodItemsList.map((objCategory) => (
+                        sortFetchedData(objCategory))).map((objCategory) => (
+                            <ItemCategory objCategory={objCategory}/>
+                        ))
+                }
+
+                {searchData &&
+                    <>
                         <h2>Поиск по запросу: "{searchData}"</h2>
                         <div className="food-section">
                             {foodItemsList.map((objCategory) => (
@@ -98,12 +94,11 @@ export default function Main() {
                                 ))
                             }
                         </div>
-                        </>
-                    }
-                </div>
-                <Bottombar />
-                <ArrowIcon />
+                    </>
+                }
             </div>
-        </>
+            <Bottombar />
+            <ArrowIcon />
+        </div>
     );
 };

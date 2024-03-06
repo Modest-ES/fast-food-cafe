@@ -1,3 +1,6 @@
+
+// Подвал страницы с вспомогательной информацией
+
 export default function ArrowIcon() {
     return (
       <footer className="bottombar">

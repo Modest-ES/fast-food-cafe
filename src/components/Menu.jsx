@@ -38,10 +38,10 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
           </ul>
         </nav>
         <div ref={sortingRef} className="sorting">
-          <div className="sorting-button">
+          <button className="sorting-button">
             <img src="./icon_sorting.png" alt="Sort icon" />
             <p onClick={() => setSortingListVisible(!sortingListVisible)}>Отсортировать:</p>
-          </div>
+          </button>
           {sortingListVisible && (
             <div className="sorting-list">
               <ul>

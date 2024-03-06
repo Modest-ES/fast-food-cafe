@@ -61,7 +61,7 @@ export default function Main() {
     }
 
     return(
-        <div className="mainshell">
+        <main className="mainshell">
 
             {cartIsOpened && 
             <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
@@ -99,6 +99,6 @@ export default function Main() {
             </div>
             <Bottombar />
             <ArrowIcon />
-        </div>
+        </main>
     );
 };

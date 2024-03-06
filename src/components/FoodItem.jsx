@@ -27,16 +27,14 @@ export default function FoodItem({id, options, title, imgsrc}) {
         <div className="food-item-options">
           {
             options.map((optionTitle, optionIndex) => (
-              <p key={optionIndex} onClick={() => setCurrentFoodOption(optionIndex)} className={currentFoodOption === optionIndex ? "chosen" : ""}>{optionTitle[0]}</p>
+              <button key={optionIndex} onClick={() => setCurrentFoodOption(optionIndex)} className={currentFoodOption === optionIndex ? "chosen" : ""}>{optionTitle[0]}</button>
             ))
           }
         </div>
         <div className="food-item-bar">
           <p>{options[currentFoodOption][1]} руб.</p>
-          <div className="food-item-buy-button"
-          onClick={onClickAddItem}>
-            <p>Выбрать</p>
-          </div>
+          <button className="food-item-buy-button"
+          onClick={onClickAddItem}>Выбрать</button>
         </div>
       </div>
     );

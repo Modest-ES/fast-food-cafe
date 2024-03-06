@@ -18,7 +18,7 @@ export default function CartOverlayShell({onClickBtnBack}) {
 
     return(
         <div className="cart-overlay-shell">
-            <div className="cart-overlay-shadow" onClick={onClickBtnBack}></div>
+            <button className="cart-overlay-shadow" onClick={onClickBtnBack}></button>
             <div className="cart-overlay">
                 <div className="cart-title">
                     <div className="cart-title-row">
@@ -27,7 +27,9 @@ export default function CartOverlayShell({onClickBtnBack}) {
                         </button>
                     </div>
                     <h3>Корзина</h3>
-                    <img src='./icon_clear.png' alt="clear" title="Очистить корзину" className="btn-clear-cart" onClick={onClickClear}/>
+                    <button>
+                        <img src='./icon_clear.png' alt="clear" title="Очистить корзину" className="btn-clear-cart" onClick={onClickClear}/>
+                    </button>
                 </div>
 
                 {items.length === 0 && <EmptyCartMessage />}

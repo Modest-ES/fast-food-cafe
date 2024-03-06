@@ -12,20 +12,20 @@ export default function NotFound() {
     return(
     <div className="mainshell">
       <Link to="/" className="topbar">
-        <div className="logo-section">
+        <button className="logo-section">
           <img src="./favicon_light.png" alt="Logo" />
           <div className="logo-text">
             <h3>Fast Food Cafe</h3>
             <p>Доставка еды на дом</p>
           </div>
-        </div>
+        </button>
       </Link>
       <div className='not-found-screen'>
         <img src="./icon_404.png" alt="404 Page Not Found" title="Страница не найдена" />
         <h1>Ошибка: Страница не найдена</h1>
-        <div className='button-to-main'>
+        <button className='button-to-main'>
             <Link to="/"><p>На главную</p></Link>
-        </div>
+        </button>
       </div>
       <Bottombar />
     </div>

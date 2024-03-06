@@ -19,13 +19,13 @@ export default function Topbar({onClickCart}) {
           </div>
           <Searchbar classNameTags={"search-block search-topbar"} />
           <div className="cart-section">
-            <div className="cart-button" title="Shopping Cart" onClick={onClickCart}>
+            <button className="cart-button" title="Shopping Cart" onClick={onClickCart}>
               <p>{totalPrice} руб.</p>
               <div className="cart-button-icon">
                 <img src="./icon_shoppingcart.png" alt="Cart" />
                 <p>{totalAmount}</p>
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <Searchbar classNameTags={"search-block search-under-topbar"} />

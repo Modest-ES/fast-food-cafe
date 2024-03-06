@@ -72,6 +72,13 @@ a {
   text-decoration: none;
 }
 
+button {
+  background: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 @mixin noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -127,6 +134,7 @@ a {
     }
     p {
       color: white;
+      font-size: 16px;
     }
   }
 }
@@ -222,6 +230,8 @@ a {
     .logo-text {
       transition: 0.5s;
       p {
+        display: flex;
+        justify-content: flex-start;
         font-size: 18px;
         margin: 0;
         color: black;
@@ -381,6 +391,7 @@ a {
           text-decoration: underline dotted $maincolor;
           margin-bottom: 3px;
           font-family: 'Roboto';
+          font-size: 16px;
         }
       }
 
@@ -464,7 +475,7 @@ a {
         align-items: center;
         justify-content: space-between;
         margin: 5px 0px;
-        p {
+        button {
           display: flex;
           justify-content: center;
           background-color: $background;
@@ -494,7 +505,7 @@ a {
         align-items: center;
         margin-top: 10px;
         cursor: default;
-        p {
+        button, p {
           font-size: 18px;
           font-family: 'Roboto';
           user-select: none;
@@ -548,13 +559,6 @@ a {
 }
 
 .cart-overlay-shell {
-
-  // .open-cart {
-  //   animation-direction: normal !important;
-  // }
-  // .close-cart {
-  //   animation-direction: reverse !important;
-  // }
 
   .cart-overlay-shadow {
     animation: fade-in 0.5s both;

@@ -36,9 +36,13 @@ export default function CartItem({id, title, price, option, count, imgsrc}) {
                 </div>
                 <div className="cart-item-lower-side">
                     <div className='amount-options'>
-                        <img src="./icon_itemminus.png" alt="less" onClick={onClickMinus}/>
+                        <button>
+                            <img src="./icon_itemminus.png" alt="less" onClick={onClickMinus}/>
+                        </button>
                         <p>{count}</p>
-                        <img src="./icon_itemplus.png" alt="more" onClick={onClickPlus}/>
+                        <button>
+                            <img src="./icon_itemplus.png" alt="more" onClick={onClickPlus}/>
+                        </button>
                     </div>
                     <b>{price * count} руб.</b>
                 </div>

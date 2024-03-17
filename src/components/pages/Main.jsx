@@ -15,6 +15,8 @@ import ItemCategory from '../ItemCategory.jsx';
 import SearchResultCategory from '../SearchResultCategory.jsx';
 import SkeletonSection from '../SkeletonSection.jsx';
 
+import { ThemeContext } from '../../App.js';
+
 export const SearchContext = React.createContext();
 
 export default function Main() {
@@ -23,6 +25,7 @@ export default function Main() {
     const [cartIsOpened, setCartIsOpened] = React.useState(false); // статус открытия корзины (открыта / нет)
     const [sortingMode, setSortingMode] = React.useState("id"); // тип сортировки товаров (id = по популярности / price = по цене / title = по алфавиту)
     const [searchData, setSearchData] = React.useState(''); // данные поля ввода поисковой строки
+    const {darkMode} = React.useContext(ThemeContext);
     
     // Реализация запроса данных с бэкенда
     React.useEffect(() => {
@@ -61,44 +64,44 @@ export default function Main() {
     }
 
     return(
-        <main className="mainshell">
+            <main className={darkMode ? "mainshell-dark" : "mainshell"}>
 
-            {cartIsOpened && 
-            <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
+                {cartIsOpened && 
+                <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
 
-            <SearchContext.Provider value={{searchData, setSearchData}}>
-                <Topbar onClickCart={() => setCartIsOpened(true)} />
-            </SearchContext.Provider>
-        
-            <div className="main-section">
-                {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
+                <SearchContext.Provider value={{searchData, setSearchData}}>
+                    <Topbar onClickCart={() => setCartIsOpened(true)} />
+                </SearchContext.Provider>
 
-                {contentIsLoading &&
-                    <SkeletonSection />
-                }
+                <div className="main-section">
+                    {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
 
-                {!searchData &&
-                    foodItemsList.map((objCategory) => (
-                        sortFetchedData(objCategory))).map((objCategory) => (
-                            <ItemCategory objCategory={objCategory}/>
-                        ))
-                }
+                    {contentIsLoading &&
+                        <SkeletonSection />
+                    }
 
-                {searchData &&
-                    <>
-                        <h2>Поиск по запросу: "{searchData}"</h2>
-                        <div className="food-section">
-                            {foodItemsList.map((objCategory) => (
-                                sortFetchedData(objCategory))).map((objCategory) => (
-                                    <SearchResultCategory searchData={searchData} objCategory={objCategory} />
-                                ))
-                            }
-                        </div>
-                    </>
-                }
-            </div>
-            <Bottombar />
-            <ArrowIcon />
-        </main>
+                    {!searchData &&
+                        foodItemsList.map((objCategory) => (
+                            sortFetchedData(objCategory))).map((objCategory) => (
+                                <ItemCategory objCategory={objCategory}/>
+                            ))
+                    }
+
+                    {searchData &&
+                        <>
+                            <h2 className={darkMode ? "dark" : ""}>Поиск по запросу: "{searchData}"</h2>
+                            <div className="food-section">
+                                {foodItemsList.map((objCategory) => (
+                                    sortFetchedData(objCategory))).map((objCategory) => (
+                                        <SearchResultCategory key={objCategory.id}searchData={searchData} objCategory={objCategory} />
+                                    ))
+                                }
+                            </div>
+                        </>
+                    }
+                </div>
+                <Bottombar />
+                <ArrowIcon />
+            </main>
     );
 };

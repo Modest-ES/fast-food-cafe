@@ -4,20 +4,26 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Main from './components/pages/Main.jsx';
-import Order from './components/pages/Order.jsx';
+//import Order from './components/pages/Order.jsx';
 import NotFound from './components/pages/NotFound.jsx';
 
-export const CartContext = React.createContext('');
+export const ThemeContext = React.createContext('');
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(true);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
+
   return (
-    <CartContext.Provider>
+    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/placeorder" element={<Order />} />
+        {/* <Route path="/placeorder" element={<Order />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </CartContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 

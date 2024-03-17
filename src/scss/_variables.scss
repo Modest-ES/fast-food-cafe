@@ -1,8 +1,18 @@
 $black: #232323;
+$maincolor: rgb(46, 161, 23);
+$third-color: rgb(217, 255, 210);
+$container-width: 90%;
 $background: rgb(217, 252, 210);
 $grey: rgb(233, 240, 233);
-$maincolor: rgb(46, 161, 23);
+$secondary-color: rgb(240, 240, 240);
+$background-dark: rgb(40, 40, 40); 
+$grey-dark: rgb(74, 74, 74);
+$secondary-color-dark: rgb(56, 56, 56);
 
-$container-width: 90%;
+[data-theme='dark'] {
+    $background: rgb(40, 40, 40);
+    $grey: rgb(74, 74, 74);
+    $secondary-color: rgb(56, 56, 56);
+}
 
 $duration: 0.15s;

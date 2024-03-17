@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ThemeContext } from '../App.js';
+
 import foodItemsList from '../assets/foodItemsList.json';
 
 export default function Menu({currentSortingMode, functionChangeSortingMode}) {
@@ -10,6 +12,7 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
   ];
   const [sortingListVisible, setSortingListVisible] = React.useState(false);
   const sortingRef = React.useRef();
+  const {darkMode} = React.useContext(ThemeContext);
 
   const sortingOptionClicked = (categoryIndex) => {
     functionChangeSortingMode(categoryIndex);
@@ -40,10 +43,10 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
         <div ref={sortingRef} className="sorting">
           <button className="sorting-button">
             <img src="./icon_sorting.png" alt="Sort icon" />
-            <p onClick={() => setSortingListVisible(!sortingListVisible)}>Отсортировать:</p>
+            <p onClick={() => setSortingListVisible(!sortingListVisible)} className={darkMode ? "dark" : ""}>Отсортировать:</p>
           </button>
           {sortingListVisible && (
-            <div className="sorting-list">
+            <div className={darkMode ? "sorting-list-dark" : "sorting-list"}>
               <ul>
                 {
                   sortingCategories.map((category, categoryIndex) => (

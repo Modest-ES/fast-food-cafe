@@ -1,763 +1,1069 @@
 [
-    {
-      "categoryId": 0,
-      "categoryTag": "tag-burgers",
-      "categoryTitle": "Бургеры",
-      "itemsList": [
-        {
-          "id": 0,
-          "options": [
-            [
-              "Стандартный",
-              360
-            ],
-            [
-              "Острый",
-              365
-            ]
+  {
+    "categoryId": 0,
+    "categoryTag": "tag-burgers",
+    "categoryTitle": "Бургеры",
+    "itemsList": [
+      {
+        "id": 0,
+        "options": [
+          [
+            "Стандартный",
+            360
           ],
-          "title": "Бургер \"Чикен\"",
-          "imgsrc": "./htmlsrcphotos/burger_chicken.png"
-        },
-        {
-          "id": 1,
-          "options": [
-            [
-              "Стандартный",
-              440
-            ],
-            [
-              "Острый",
-              445
-            ]
+          [
+            "Острый",
+            365
+          ]
+        ],
+        "title": "Бургер \"Чикен\"",
+        "imgsrc": "./htmlsrcphotos/burger_chicken.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Куриное филе",
+          "Салат",
+          "Огурцы",
+          "Соус Бургер"
+        ]
+      },
+      {
+        "id": 1,
+        "options": [
+          [
+            "Стандартный",
+            440
           ],
-          "title": "Бургер \"Пепперони\"",
-          "imgsrc": "./htmlsrcphotos/burger_pepperoni.png"
-        },
-        {
-          "id": 2,
-          "options": [
-            [
-              "Стандартный",
-              320
-            ],
-            [
-              "Острый",
-              325
-            ]
+          [
+            "Острый",
+            445
+          ]
+        ],
+        "title": "Бургер \"Пепперони\"",
+        "imgsrc": "./htmlsrcphotos/burger_pepperoni.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Пепперони",
+          "Котлета из говядины",
+          "Огурцы",
+          "Томатный Соус",
+          "Салат",
+          "Сыр Чеддар"
+        ]
+      },
+      {
+        "id": 2,
+        "options": [
+          [
+            "Стандартный",
+            320
           ],
-          "title": "Бургер \"Классик\"",
-          "imgsrc": "./htmlsrcphotos/burger_classic.png"
-        },
-        {
-          "id": 3,
-          "options": [
-            [
-              "Стандартный",
-              410
-            ],
-            [
-              "Острый",
-              415
-            ]
+          [
+            "Острый",
+            325
+          ]
+        ],
+        "title": "Бургер \"Классик\"",
+        "imgsrc": "./htmlsrcphotos/burger_classic.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Котлета из говядины",
+          "Салат",
+          "Огурцы",
+          "Соус Бургер",
+          "Сыр Чеддар",
+          "Томаты"
+        ]
+      },
+      {
+        "id": 3,
+        "options": [
+          [
+            "Стандартный",
+            410
           ],
-          "title": "Бургер \"Бекон\"",
-          "imgsrc": "./htmlsrcphotos/burger_bacon.png"
-        },
-        {
-          "id": 4,
-          "options": [
-            [
-              "Стандартный",
-              380
-            ],
-            [
-              "Острый",
-              385
-            ]
+          [
+            "Острый",
+            415
+          ]
+        ],
+        "title": "Бургер \"Бекон\"",
+        "imgsrc": "./htmlsrcphotos/burger_bacon.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Котлета из говядины",
+          "Салат",
+          "Бекон",
+          "Соус Бургер"
+        ]
+      },
+      {
+        "id": 4,
+        "options": [
+          [
+            "Стандартный",
+            380
           ],
-          "title": "Бургер \"Барбекю\"",
-          "imgsrc": "./htmlsrcphotos/burger_bbq.png"
-        },
-        {
-          "id": 5,
-          "options": [
-            [
-              "Стандартный",
-              310
-            ],
-            [
-              "Острый",
-              315
-            ]
+          [
+            "Острый",
+            385
+          ]
+        ],
+        "title": "Бургер \"Барбекю\"",
+        "imgsrc": "./htmlsrcphotos/burger_bbq.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Котлета из говядины",
+          "Салат",
+          "Огурцы",
+          "Сыр Чеддар",
+          "Соус Барбекю"
+        ]
+      },
+      {
+        "id": 5,
+        "options": [
+          [
+            "Стандартный",
+            310
           ],
-          "title": "Бургер \"Красный лук\"",
-          "imgsrc": "./htmlsrcphotos/burger_redonion.png"
-        },
-        {
-          "id": 6,
-          "options": [
-            [
-              "Стандартный",
-              400
-            ],
-            [
-              "Острый",
-              405
-            ]
+          [
+            "Острый",
+            315
+          ]
+        ],
+        "title": "Бургер \"Красный лук\"",
+        "imgsrc": "./htmlsrcphotos/burger_redonion.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Котлета из говядины",
+          "Салат",
+          "Красный лук",
+          "Соус 1000 островов"
+        ]
+      },
+      {
+        "id": 6,
+        "options": [
+          [
+            "Стандартный",
+            400
           ],
-          "title": "Бургер \"Чикен Делюкс\"",
-          "imgsrc": "./htmlsrcphotos/burger_chickendeluxe.png"
-        },
-        {
-          "id": 7,
-          "options": [
-            [
-              "Стандартный",
-              290
-            ],
-            [
-              "Острый",
-              295
-            ]
+          [
+            "Острый",
+            405
+          ]
+        ],
+        "title": "Бургер \"Чикен Делюкс\"",
+        "imgsrc": "./htmlsrcphotos/burger_chickendeluxe.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Куриное филе",
+          "Салат",
+          "Огурцы",
+          "Соус 1000 островов",
+          "Сыр Чеддар",
+          "Томаты"
+        ]
+      },
+      {
+        "id": 7,
+        "options": [
+          [
+            "Стандартный",
+            290
           ],
-          "title": "Бургер \"Грибной\"",
-          "imgsrc": "./htmlsrcphotos/burger_mushroom.png"
-        },
-        {
-          "id": 8,
-          "options": [
-            [
-              "Стандартный",
-              300
-            ],
-            [
-              "Острый",
-              305
-            ]
+          [
+            "Острый",
+            295
+          ]
+        ],
+        "title": "Бургер \"Грибной\"",
+        "imgsrc": "./htmlsrcphotos/burger_mushroom.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Куриное филе",
+          "Салат",
+          "Томаты",
+          "Соус Бургер",
+          "Сыр Чеддар",
+          "Шампиньоны",
+          "Шпинат"
+        ]
+      },
+      {
+        "id": 8,
+        "options": [
+          [
+            "Стандартный",
+            300
           ],
-          "title": "Бургер \"Вегетарианский\"",
-          "imgsrc": "./htmlsrcphotos/burger_vegetarian.png"
-        }
-      ]
-    },
-    {
-      "categoryId": 1,
-      "categoryTag": "tag-pizza",
-      "categoryTitle": "Пицца",
-      "itemsList": [
-        {
-          "id": 0,
-          "options": [
-            [
-              "25 см",
-              570
-            ],
-            [
-              "30 см",
-              700
-            ],
-            [
-              "35 см",
-              900
-            ]
+          [
+            "Острый",
+            305
+          ]
+        ],
+        "title": "Бургер \"Вегетарианский\"",
+        "imgsrc": "./htmlsrcphotos/burger_vegetarian.png",
+        "ingredients": [
+          "Булочка с кунжутом",
+          "Вегетарианская котлета",
+          "Салат",
+          "Морковь",
+          "Шпинат",
+          "Соус 1000 островов"
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": 1,
+    "categoryTag": "tag-pizza",
+    "categoryTitle": "Пицца",
+    "itemsList": [
+      {
+        "id": 9,
+        "options": [
+          [
+            "25 см",
+            570
           ],
-          "title": "Пицца \"Бекон\"",
-          "imgsrc": "./htmlsrcphotos/pizza_bacon.png"
-        },
-        {
-          "id": 1,
-          "options": [
-            [
-              "25 см",
-              430
-            ],
-            [
-              "30 см",
-              550
-            ],
-            [
-              "35 см",
-              710
-            ]
+          [
+            "30 см",
+            700
           ],
-          "title": "Пицца \"Пепперони\"",
-          "imgsrc": "./htmlsrcphotos/pizza_pepperoni.png"
-        },
-        {
-          "id": 2,
-          "options": [
-            [
-              "25 см",
-              515
-            ],
-            [
-              "30 см",
-              650
-            ],
-            [
-              "35 см",
-              830
-            ]
+          [
+            "35 см",
+            900
+          ]
+        ],
+        "title": "Пицца \"Бекон\"",
+        "imgsrc": "./htmlsrcphotos/pizza_bacon.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Зеленый лук",
+          "Бекон"
+        ]
+      },
+      {
+        "id": 10,
+        "options": [
+          [
+            "25 см",
+            430
           ],
-          "title": "Пицца \"Чикен\"",
-          "imgsrc": "./htmlsrcphotos/pizza_chicken.png"
-        },
-        {
-          "id": 3,
-          "options": [
-            [
-              "25 см",
-              550
-            ],
-            [
-              "30 см",
-              690
-            ],
-            [
-              "35 см",
-              890
-            ]
+          [
+            "30 см",
+            550
           ],
-          "title": "Пицца \"Блю-Чиз\"",
-          "imgsrc": "./htmlsrcphotos/pizza_bluecheese.png"
-        },
-        {
-          "id": 4,
-          "options": [
-            [
-              "25 см",
-              590
-            ],
-            [
-              "30 см",
-              720
-            ],
-            [
-              "35 см",
-              930
-            ]
+          [
+            "35 см",
+            710
+          ]
+        ],
+        "title": "Пицца \"Пепперони\"",
+        "imgsrc": "./htmlsrcphotos/pizza_pepperoni.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Пепперони"
+        ]
+      },
+      {
+        "id": 11,
+        "options": [
+          [
+            "25 см",
+            515
           ],
-          "title": "Пицца \"Детройт\"",
-          "imgsrc": "./htmlsrcphotos/pizza_detroitstyle.png"
-        },
-        {
-          "id": 5,
-          "options": [
-            [
-              "25 см",
-              480
-            ],
-            [
-              "30 см",
-              640
-            ],
-            [
-              "35 см",
-              820
-            ]
+          [
+            "30 см",
+            650
           ],
-          "title": "Пицца \"Грибная\"",
-          "imgsrc": "./htmlsrcphotos/pizza_mushroom.png"
-        },
-        {
-          "id": 6,
-          "options": [
-            [
-              "25 см",
-              470
-            ],
-            [
-              "30 см",
-              630
-            ],
-            [
-              "35 см",
-              780
-            ]
+          [
+            "35 см",
+            830
+          ]
+        ],
+        "title": "Пицца \"Чикен\"",
+        "imgsrc": "./htmlsrcphotos/pizza_chicken.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Жареная курица",
+          "Сыр Пармезан",
+          "Красный лук",
+          "Томаты",
+          "Кинза"
+        ]
+      },
+      {
+        "id": 12,
+        "options": [
+          [
+            "25 см",
+            550
           ],
-          "title": "Пицца \"Гавайская\"",
-          "imgsrc": "./htmlsrcphotos/pizza_hawaiian.png"
-        },
-        {
-          "id": 7,
-          "options": [
-            [
-              "25 см",
-              640
-            ],
-            [
-              "30 см",
-              810
-            ],
-            [
-              "35 см",
-              980
-            ]
+          [
+            "30 см",
+            690
           ],
-          "title": "Пицца \"Барбекю\"",
-          "imgsrc": "./htmlsrcphotos/pizza_bbq.png"
-        },
-        {
-          "id": 8,
-          "options": [
-            [
-              "25 см",
-              390
-            ],
-            [
-              "30 см",
-              540
-            ],
-            [
-              "35 см",
-              690
-            ]
+          [
+            "35 см",
+            890
+          ]
+        ],
+        "title": "Пицца \"Блю-Чиз\"",
+        "imgsrc": "./htmlsrcphotos/pizza_bluecheese.png",
+        "ingredients": [
+          "Тесто",
+          "Сырный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Сыр Блю-Чиз",
+          "Зеленый лук",
+          "Шпинат"
+        ]
+      },
+      {
+        "id": 13,
+        "options": [
+          [
+            "25 см",
+            590
           ],
-          "title": "Пицца \"Вегетарианская\"",
-          "imgsrc": "./htmlsrcphotos/pizza_vegetarian.png"
-        },
-        {
-          "id": 9,
-          "options": [
-            [
-              "25 см",
-              525
-            ],
-            [
-              "30 см",
-              680
-            ],
-            [
-              "35 см",
-              850
-            ]
+          [
+            "30 см",
+            720
           ],
-          "title": "Пицца \"Сырная Пепперони\"",
-          "imgsrc": "./htmlsrcphotos/pizza_cheesepepperoni.png"
-        },
-        {
-          "id": 10,
-          "options": [
-            [
-              "25 см",
-              600
-            ],
-            [
-              "30 см",
-              740
-            ],
-            [
-              "35 см",
-              950
-            ]
+          [
+            "35 см",
+            930
+          ]
+        ],
+        "title": "Пицца \"Детройт\"",
+        "imgsrc": "./htmlsrcphotos/pizza_detroitstyle.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Зеленый лук",
+          "Жареная говядина",
+          "Орегано"
+        ]
+      },
+      {
+        "id": 14,
+        "options": [
+          [
+            "25 см",
+            480
           ],
-          "title": "Пицца \"Мясная\"",
-          "imgsrc": "./htmlsrcphotos/pizza_groundbeef.png"
-        },
-        {
-          "id": 11,
-          "options": [
-            [
-              "25 см",
-              575
-            ],
-            [
-              "30 см",
-              710
-            ],
-            [
-              "35 см",
-              910
-            ]
+          [
+            "30 см",
+            640
           ],
-          "title": "Пицца \"Ветчина и сыр\"",
-          "imgsrc": "./htmlsrcphotos/pizza_ham.png"
-        }
-      ]
-    },
-    {
-      "categoryId": 2,
-      "categoryTag": "tag-snacks",
-      "categoryTitle": "Закуски",
-      "itemsList": [
-        {
-          "id": 0,
-          "options": [
-            [
-              "3 шт.",
-              140
-            ],
-            [
-              "6 шт.",
-              245
-            ],
-            [
-              "9 шт.",
-              355
-            ]
+          [
+            "35 см",
+            820
+          ]
+        ],
+        "title": "Пицца \"Грибная\"",
+        "imgsrc": "./htmlsrcphotos/pizza_mushroom.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Зеленый лук",
+          "Шампиньоны"
+        ]
+      },
+      {
+        "id": 15,
+        "options": [
+          [
+            "25 см",
+            470
           ],
-          "title": "Куриные крылышки",
-          "imgsrc": "./htmlsrcphotos/snack_chickenwings.png"
-        },
-        {
-          "id": 1,
-          "options": [
-            [
-              "3 шт.",
-              130
-            ],
-            [
-              "6 шт.",
-              210
-            ],
-            [
-              "9 шт.",
-              300
-            ]
+          [
+            "30 см",
+            630
           ],
-          "title": "Куриные наггетсы",
-          "imgsrc": "./htmlsrcphotos/snack_chickennuggets.png"
-        },
-        {
-          "id": 2,
-          "options": [
-            [
-              "3 шт.",
-              135
-            ],
-            [
-              "6 шт.",
-              230
-            ],
-            [
-              "9 шт.",
-              330
-            ]
+          [
+            "35 см",
+            780
+          ]
+        ],
+        "title": "Пицца \"Гавайская\"",
+        "imgsrc": "./htmlsrcphotos/pizza_hawaiian.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Сыр Чеддар",
+          "Красный лук",
+          "Зеленый лук",
+          "Ананас"
+        ]
+      },
+      {
+        "id": 16,
+        "options": [
+          [
+            "25 см",
+            640
           ],
-          "title": "Куриные филе",
-          "imgsrc": "./htmlsrcphotos/snack_chickenfilets.png"
-        },
-        {
-          "id": 3,
-          "options": [
-            [
-              "Мал.",
-              110
-            ],
-            [
-              "Сред.",
-              170
-            ],
-            [
-              "Бол.",
-              220
-            ]
+          [
+            "30 см",
+            810
           ],
-          "title": "Картофель фри",
-          "imgsrc": "./htmlsrcphotos/snack_fries.png"
-        },
-        {
-          "id": 4,
-          "options": [
-            [
-              "3 шт.",
-              145
-            ],
-            [
-              "6 шт.",
-              250
-            ],
-            [
-              "9 шт.",
-              360
-            ]
+          [
+            "35 см",
+            980
+          ]
+        ],
+        "title": "Пицца \"Барбекю\"",
+        "imgsrc": "./htmlsrcphotos/pizza_bbq.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Соус Барбекю",
+          "Жареная говядина",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Зеленый лук",
+          "Пепперони"
+        ]
+      },
+      {
+        "id": 17,
+        "options": [
+          [
+            "25 см",
+            390
           ],
-          "title": "Сырные шарики",
-          "imgsrc": "./htmlsrcphotos/snack_cheeseballs.png"
-        },
-        {
-          "id": 5,
-          "options": [
-            [
-              "Мал.",
-              200
-            ],
-            [
-              "Сред.",
-              280
-            ],
-            [
-              "Бол.",
-              390
-            ]
+          [
+            "30 см",
+            540
           ],
-          "title": "Паста Карбонара",
-          "imgsrc": "./htmlsrcphotos/snack_carbonara.png"
-        }
-      ]
-    },
-    {
-      "categoryId": 3,
-      "categoryTag": "tag-desserts",
-      "categoryTitle": "Десерты",
-      "itemsList": [
-        {
-          "id": 0,
-          "options": [
-            [
-              "Мал.",
-              180
-            ],
-            [
-              "Бол.",
-              320
-            ]
+          [
+            "35 см",
+            690
+          ]
+        ],
+        "title": "Пицца \"Вегетарианская\"",
+        "imgsrc": "./htmlsrcphotos/pizza_vegetarian.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Зеленый лук",
+          "Томаты Черри",
+          "Маслины",
+          "Красный лук"
+        ]
+      },
+      {
+        "id": 18,
+        "options": [
+          [
+            "25 см",
+            525
           ],
-          "title": "Чизкейк",
-          "imgsrc": "./htmlsrcphotos/dessert_cheesecake.png"
-        },
-        {
-          "id": 1,
-          "options": [
-            [
-              "Мал.",
-              170
-            ],
-            [
-              "Бол.",
-              310
-            ]
+          [
+            "30 см",
+            680
           ],
-          "title": "Шоколадный торт",
-          "imgsrc": "./htmlsrcphotos/dessert_chocolatecake.png"
-        },
-        {
-          "id": 2,
-          "options": [
-            [
-              "Мал.",
-              120
-            ],
-            [
-              "Бол.",
-              190
-            ]
+          [
+            "35 см",
+            850
+          ]
+        ],
+        "title": "Пицца \"Сырная Пепперони\"",
+        "imgsrc": "./htmlsrcphotos/pizza_cheesepepperoni.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Сыр Чеддар",
+          "Зеленый лук",
+          "Пепперони"
+        ]
+      },
+      {
+        "id": 19,
+        "options": [
+          [
+            "25 см",
+            600
           ],
-          "title": "Клубничное мороженое",
-          "imgsrc": "./htmlsrcphotos/dessert_strawberryicecream.png"
-        },
-        {
-          "id": 3,
-          "options": [
-            [
-              "Мал.",
-              165
-            ],
-            [
-              "Бол.",
-              305
-            ]
+          [
+            "30 см",
+            740
           ],
-          "title": "Торт \"Красный Бархат\"",
-          "imgsrc": "./htmlsrcphotos/dessert_redvelvetcake.png"
-        },
-        {
-          "id": 4,
-          "options": [
-            [
-              "Мал.",
-              125
-            ],
-            [
-              "Бол.",
-              195
-            ]
+          [
+            "35 см",
+            950
+          ]
+        ],
+        "title": "Пицца \"Мясная\"",
+        "imgsrc": "./htmlsrcphotos/pizza_groundbeef.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Фарш из говядины",
+          "Шпинат"
+        ]
+      },
+      {
+        "id": 20,
+        "options": [
+          [
+            "25 см",
+            575
           ],
-          "title": "Шоколадное мороженое",
-          "imgsrc": "./htmlsrcphotos/dessert_chocolateicecream.png"
-        },
-        {
-          "id": 5,
-          "options": [
-            [
-              "Мал.",
-              115
-            ],
-            [
-              "Бол.",
-              185
-            ]
+          [
+            "30 см",
+            710
           ],
-          "title": "Ванильное мороженое",
-          "imgsrc": "./htmlsrcphotos/dessert_vanillaicecream.png"
-        },
-        {
-          "id": 6,
-          "options": [
-            [
-              "Мал.",
-              150
-            ],
-            [
-              "Бол.",
-              285
-            ]
+          [
+            "35 см",
+            910
+          ]
+        ],
+        "title": "Пицца \"Ветчина и сыр\"",
+        "imgsrc": "./htmlsrcphotos/pizza_ham.png",
+        "ingredients": [
+          "Тесто",
+          "Томатный Соус",
+          "Сыр Моцарелла",
+          "Сыр Пармезан",
+          "Зеленый лук",
+          "Ветчина"
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": 2,
+    "categoryTag": "tag-snacks",
+    "categoryTitle": "Закуски",
+    "itemsList": [
+      {
+        "id": 21,
+        "options": [
+          [
+            "3 шт.",
+            140
           ],
-          "title": "Фисташковый торт",
-          "imgsrc": "./htmlsrcphotos/dessert_pistacchiocake.png"
-        },
-        {
-          "id": 7,
-          "options": [
-            [
-              "Мал.",
-              100
-            ],
-            [
-              "Бол.",
-              160
-            ]
+          [
+            "6 шт.",
+            245
           ],
-          "title": "Булочка с корицей",
-          "imgsrc": "./htmlsrcphotos/dessert_cinnamonbun.png"
-        },
-        {
-          "id": 8,
-          "options": [
-            [
-              "Мал.",
-              145
-            ],
-            [
-              "Бол.",
-              275
-            ]
+          [
+            "9 шт.",
+            355
+          ]
+        ],
+        "title": "Куриные крылышки",
+        "imgsrc": "./htmlsrcphotos/snack_chickenwings.png",
+        "ingredients": [
+          "Жареная курица",
+          "Приправы и специи"
+        ]
+      },
+      {
+        "id": 22,
+        "options": [
+          [
+            "3 шт.",
+            130
           ],
-          "title": "Торт \"Лесной орех\"",
-          "imgsrc": "./htmlsrcphotos/dessert_hazelnutcake.png"
-        }
-      ]
-    },
-    {
-      "categoryId": 4,
-      "categoryTag": "tag-drinks",
-      "categoryTitle": "Напитки",
-      "itemsList": [
-        {
-          "id": 0,
-          "options": [
-            [
-              "0.3 л",
-              80
-            ],
-            [
-              "0.5 л",
-              120
-            ],
-            [
-              "0.7 л",
-              160
-            ]
+          [
+            "6 шт.",
+            210
           ],
-          "title": "Апельсиновый лимонад",
-          "imgsrc": "./htmlsrcphotos/drink_orangesoda.png"
-        },
-        {
-          "id": 1,
-          "options": [
-            [
-              "0.3 л",
-              90
-            ],
-            [
-              "0.5 л",
-              130
-            ],
-            [
-              "0.7 л",
-              170
-            ]
+          [
+            "9 шт.",
+            300
+          ]
+        ],
+        "title": "Куриные наггетсы",
+        "imgsrc": "./htmlsrcphotos/snack_chickennuggets.png",
+        "ingredients": [
+          "Жареная курица",
+          "Приправы и специи"
+        ]
+      },
+      {
+        "id": 23,
+        "options": [
+          [
+            "3 шт.",
+            135
           ],
-          "title": "Кола",
-          "imgsrc": "./htmlsrcphotos/drink_cola.png"
-        },
-        {
-          "id": 2,
-          "options": [
-            [
-              "0.3 л",
-              95
-            ],
-            [
-              "0.5 л",
-              135
-            ],
-            [
-              "0.7 л",
-              175
-            ]
+          [
+            "6 шт.",
+            230
           ],
-          "title": "Клубничный лимонад",
-          "imgsrc": "./htmlsrcphotos/drink_strawberrysoda.png"
-        },
-        {
-          "id": 3,
-          "options": [
-            [
-              "0.3 л",
-              75
-            ],
-            [
-              "0.5 л",
-              115
-            ],
-            [
-              "0.7 л",
-              155
-            ]
+          [
+            "9 шт.",
+            330
+          ]
+        ],
+        "title": "Куриные филе",
+        "imgsrc": "./htmlsrcphotos/snack_chickenfilets.png",
+        "ingredients": [
+          "Жареная курица",
+          "Приправы и специи"
+        ]
+      },
+      {
+        "id": 24,
+        "options": [
+          [
+            "Мал.",
+            110
           ],
-          "title": "Тархун",
-          "imgsrc": "./htmlsrcphotos/drink_tarkhun.png"
-        },
-        {
-          "id": 4,
-          "options": [
-            [
-              "0.3 л",
-              85
-            ],
-            [
-              "0.5 л",
-              125
-            ],
-            [
-              "0.7 л",
-              165
-            ]
+          [
+            "Сред.",
+            170
           ],
-          "title": "Черничный лимонад",
-          "imgsrc": "./htmlsrcphotos/drink_blueberrysoda.png"
-        },
-        {
-          "id": 5,
-          "options": [
-            [
-              "0.3 л",
-              70
-            ],
-            [
-              "0.5 л",
-              110
-            ],
-            [
-              "0.7 л",
-              150
-            ]
+          [
+            "Бол.",
+            220
+          ]
+        ],
+        "title": "Картофель фри",
+        "imgsrc": "./htmlsrcphotos/snack_fries.png",
+        "ingredients": [
+          "Жареный картофель",
+          "Петрушка"
+        ]
+      },
+      {
+        "id": 25,
+        "options": [
+          [
+            "3 шт.",
+            145
           ],
-          "title": "Классический лимонад",
-          "imgsrc": "./htmlsrcphotos/drink_lemonade.png"
-        }
-      ]
-    }
-  ]
+          [
+            "6 шт.",
+            250
+          ],
+          [
+            "9 шт.",
+            360
+          ]
+        ],
+        "title": "Сырные шарики",
+        "imgsrc": "./htmlsrcphotos/snack_cheeseballs.png",
+        "ingredients": [
+          "Сыр Чеддар",
+          "Сыр Моцарелла",
+          "Петрушка",
+          "Приправы и специи"
+        ]
+      },
+      {
+        "id": 26,
+        "options": [
+          [
+            "Мал.",
+            200
+          ],
+          [
+            "Сред.",
+            280
+          ],
+          [
+            "Бол.",
+            390
+          ]
+        ],
+        "title": "Паста Карбонара",
+        "imgsrc": "./htmlsrcphotos/snack_carbonara.png",
+        "ingredients": [
+          "Спагетти",
+          "Бекон",
+          "Сыр Пармезан"
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": 3,
+    "categoryTag": "tag-desserts",
+    "categoryTitle": "Десерты",
+    "itemsList": [
+      {
+        "id": 27,
+        "options": [
+          [
+            "Мал.",
+            180
+          ],
+          [
+            "Бол.",
+            320
+          ]
+        ],
+        "title": "Чизкейк",
+        "imgsrc": "./htmlsrcphotos/dessert_cheesecake.png",
+        "ingredients": [
+          "Крем-чиз",
+          "Песочное тесто",
+          "Сахар",
+          "Греческий йогурт"
+        ]
+      },
+      {
+        "id": 28,
+        "options": [
+          [
+            "Мал.",
+            170
+          ],
+          [
+            "Бол.",
+            310
+          ]
+        ],
+        "title": "Шоколадный торт",
+        "imgsrc": "./htmlsrcphotos/dessert_chocolatecake.png",
+        "ingredients": [
+          "Сливки",
+          "Шоколадное тесто",
+          "Сахар",
+          "Сливочный крем",
+          "Темный шоколад"
+        ]
+      },
+      {
+        "id": 29,
+        "options": [
+          [
+            "Мал.",
+            120
+          ],
+          [
+            "Бол.",
+            190
+          ]
+        ],
+        "title": "Клубничное мороженое",
+        "imgsrc": "./htmlsrcphotos/dessert_strawberryicecream.png",
+        "ingredients": [
+          "Молоко",
+          "Сливки",
+          "Сахар",
+          "Клубника"
+        ]
+      },
+      {
+        "id": 30,
+        "options": [
+          [
+            "Мал.",
+            165
+          ],
+          [
+            "Бол.",
+            305
+          ]
+        ],
+        "title": "Торт \"Красный Бархат\"",
+        "imgsrc": "./htmlsrcphotos/dessert_redvelvetcake.png",
+        "ingredients": [
+          "Клубника",
+          "Вишневое тесто",
+          "Сахар",
+          "Сливочный крем",
+          "Сливки",
+          "Вишня"
+        ]
+      },
+      {
+        "id": 31,
+        "options": [
+          [
+            "Мал.",
+            125
+          ],
+          [
+            "Бол.",
+            195
+          ]
+        ],
+        "title": "Шоколадное мороженое",
+        "imgsrc": "./htmlsrcphotos/dessert_chocolateicecream.png",
+        "ingredients": [
+          "Молоко",
+          "Сливки",
+          "Сахар",
+          "Темный шоколад",
+          "Молочный шоколад"
+        ]
+      },
+      {
+        "id": 32,
+        "options": [
+          [
+            "Мал.",
+            115
+          ],
+          [
+            "Бол.",
+            185
+          ]
+        ],
+        "title": "Ванильное мороженое",
+        "imgsrc": "./htmlsrcphotos/dessert_vanillaicecream.png",
+        "ingredients": [
+          "Молоко",
+          "Сливки",
+          "Сахар",
+          "Ванильный экстракт"
+        ]
+      },
+      {
+        "id": 33,
+        "options": [
+          [
+            "Мал.",
+            150
+          ],
+          [
+            "Бол.",
+            285
+          ]
+        ],
+        "title": "Фисташковый торт",
+        "imgsrc": "./htmlsrcphotos/dessert_pistacchiocake.png",
+        "ingredients": [
+          "Фисташки",
+          "Ореховое тесто",
+          "Сахар",
+          "Сливочный крем",
+          "Сливки"
+        ]
+      },
+      {
+        "id": 34,
+        "options": [
+          [
+            "Мал.",
+            100
+          ],
+          [
+            "Бол.",
+            160
+          ]
+        ],
+        "title": "Булочка с корицей",
+        "imgsrc": "./htmlsrcphotos/dessert_cinnamonbun.png",
+        "ingredients": [
+          "Слоеное тесто",
+          "Корица",
+          "Сахар",
+          "Сливочный крем"
+        ]
+      },
+      {
+        "id": 35,
+        "options": [
+          [
+            "Мал.",
+            145
+          ],
+          [
+            "Бол.",
+            275
+          ]
+        ],
+        "title": "Торт \"Лесной орех\"",
+        "imgsrc": "./htmlsrcphotos/dessert_hazelnutcake.png",
+        "ingredients": [
+          "Лесной орех",
+          "Ореховое тесто",
+          "Сахар",
+          "Сливочный крем",
+          "Сливки",
+          "Ореховый сироп"
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": 4,
+    "categoryTag": "tag-drinks",
+    "categoryTitle": "Напитки",
+    "itemsList": [
+      {
+        "id": 36,
+        "options": [
+          [
+            "0.3 л",
+            80
+          ],
+          [
+            "0.5 л",
+            120
+          ],
+          [
+            "0.7 л",
+            160
+          ]
+        ],
+        "title": "Апельсиновый лимонад",
+        "imgsrc": "./htmlsrcphotos/drink_orangesoda.png",
+        "ingredients": [
+          "Апельсин",
+          "Вода",
+          "Лимонная кислота",
+          "Сахар"
+        ]
+      },
+      {
+        "id": 37,
+        "options": [
+          [
+            "0.3 л",
+            90
+          ],
+          [
+            "0.5 л",
+            130
+          ],
+          [
+            "0.7 л",
+            170
+          ]
+        ],
+        "title": "Кола",
+        "imgsrc": "./htmlsrcphotos/drink_cola.png",
+        "ingredients": [
+          "Сахарный колер",
+          "Кукурузный сироп",
+          "Вода",
+          "Карамель",
+          "Ортофосфорная кислота",
+          "Сахар"
+        ]
+      },
+      {
+        "id": 38,
+        "options": [
+          [
+            "0.3 л",
+            95
+          ],
+          [
+            "0.5 л",
+            135
+          ],
+          [
+            "0.7 л",
+            175
+          ]
+        ],
+        "title": "Клубничный лимонад",
+        "imgsrc": "./htmlsrcphotos/drink_strawberrysoda.png",
+        "ingredients": [
+          "Клубника",
+          "Вода",
+          "Лимонная кислота",
+          "Сахар"
+        ]
+      },
+      {
+        "id": 39,
+        "options": [
+          [
+            "0.3 л",
+            75
+          ],
+          [
+            "0.5 л",
+            115
+          ],
+          [
+            "0.7 л",
+            155
+          ]
+        ],
+        "title": "Тархун",
+        "imgsrc": "./htmlsrcphotos/drink_tarkhun.png",
+        "ingredients": [
+          "Экстракт эстрагона",
+          "Вода",
+          "Лимонная кислота",
+          "Сахар"
+        ]
+      },
+      {
+        "id": 40,
+        "options": [
+          [
+            "0.3 л",
+            85
+          ],
+          [
+            "0.5 л",
+            125
+          ],
+          [
+            "0.7 л",
+            165
+          ]
+        ],
+        "title": "Черничный лимонад",
+        "imgsrc": "./htmlsrcphotos/drink_blueberrysoda.png",
+        "ingredients": [
+          "Черника",
+          "Вода",
+          "Лимонная кислота",
+          "Сахар"
+        ]
+      },
+      {
+        "id": 41,
+        "options": [
+          [
+            "0.3 л",
+            70
+          ],
+          [
+            "0.5 л",
+            110
+          ],
+          [
+            "0.7 л",
+            150
+          ]
+        ],
+        "title": "Классический лимонад",
+        "imgsrc": "./htmlsrcphotos/drink_lemonade.png",
+        "ingredients": [
+          "Лимон",
+          "Вода",
+          "Лимонная кислота",
+          "Сахар"
+        ]
+      }
+    ]
+  }
+]

@@ -4,11 +4,18 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from "../redux/slices/cartSlice.js";
+import { ThemeContext } from '../App.js';
 
-export default function FoodItem({id, options, title, imgsrc}) {
+export default function FoodItem({id, options, title, imgsrc, ingredients}) {
 
+  const {darkMode} = React.useContext(ThemeContext);
   const [currentFoodOption, setCurrentFoodOption] = React.useState(0);
+  const [ingredientsShown, setIngredientsShown] = React.useState(false);
   const dispatch = useDispatch();
+
+  const showIngredients = () => {
+    setIngredientsShown((prev) => !prev);
+  }
 
   const onClickAddItem = () => {
     const currentItem = {
@@ -16,14 +23,23 @@ export default function FoodItem({id, options, title, imgsrc}) {
       title,
       price: options[currentFoodOption][1],
       imgsrc,
-      option: options[currentFoodOption][0]
+      option: options[currentFoodOption][0],
+      ingredients
     };
     dispatch(addItem(currentItem));
   }
     return (
-      <div className="food-item">
-        <img src={imgsrc} alt={title} title={title}/>
-        <h4>{title}</h4>
+      <div className={darkMode ? "food-item-dark" : "food-item"}>
+          <img src={imgsrc} alt={title} title={title} className={ingredientsShown ? 'food-item-frontside-flipped' : 'food-item-frontside'} onClick={showIngredients}/>
+          <div className={ingredientsShown ? 'food-item-backside-flipped' : 'food-item-backside'} onClick={showIngredients}>
+            <h5>Состав:</h5>
+            <ul>
+              {ingredients.map((ingredient) => (
+                <li>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
+        <h4 onClick={showIngredients}>{title}</h4>
         <div className="food-item-options">
           {
             options.map((optionTitle, optionIndex) => (

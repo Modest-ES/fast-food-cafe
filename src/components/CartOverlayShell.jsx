@@ -4,12 +4,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../redux/slices/cartSlice.js';
+import { ThemeContext } from '../App.js';
 
 import CartItem from "./CartItem.jsx";
 import EmptyCartMessage from "./EmptyCartMessage.jsx";
 
 export default function CartOverlayShell({onClickBtnBack}) {
     const dispatch = useDispatch();
+    const {darkMode} = React.useContext(ThemeContext);
     const {totalPrice, totalAmount, items} = useSelector((state) => state.cart);
 
     const onClickClear = () => {
@@ -19,7 +21,7 @@ export default function CartOverlayShell({onClickBtnBack}) {
     return(
         <div className="cart-overlay-shell">
             <button className="cart-overlay-shadow" onClick={onClickBtnBack}></button>
-            <div className="cart-overlay">
+            <div className={darkMode ? "cart-overlay-dark" : "cart-overlay"}>
                 <div className="cart-title">
                     <div className="cart-title-row">
                         <button className="btn-back" onClick={onClickBtnBack}>

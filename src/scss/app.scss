@@ -33,6 +33,21 @@
   }
 }
 
+@keyframes slide-in-blurred-left {
+  0% {
+    transform: translateX(-500px);
+    transform-origin: 0% 50%;
+    filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 @keyframes slide-down {
   0% {
     transform-origin: top;
@@ -67,18 +82,6 @@ body {
   transition: 0.5s ease;
 }
 
-.wrapper {
-  background-color: $background;
-  font-family: 'Montserrat';
-  padding-top: 30px;
-  padding-bottom: 40px;
-  transition: 0.5s ease;
-  @media (max-width: 1170px) {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-}
-
 a {
   text-decoration: none;
 }
@@ -109,7 +112,7 @@ button {
   margin-bottom: 40px;
   border-radius: 25px;
   transition: 0.5s ease;
-  @media (max-width: 1170px) {
+  @media (max-width: 1200px) {
     width: 90vw;
     margin-left: 5vw;
     margin-top: 10px;
@@ -126,7 +129,7 @@ button {
   margin-bottom: 40px;
   border-radius: 25px;
   transition: 0.5s ease;
-  @media (max-width: 1170px) {
+  @media (max-width: 1200px) {
     width: 90vw;
     margin-left: 5vw;
     margin-top: 10px;
@@ -242,12 +245,6 @@ button {
       font-family: 'Roboto';
       margin-left: 5px;
       width: 200px;
-      @media (max-width: 1375px) {
-        width: 150px;
-      }
-      @media (max-width: 1295px) {
-        width: 200px;
-      }
       @media (max-width: 920px) {
         width: 100%;
       }
@@ -268,7 +265,7 @@ button {
 
   .search-topbar {
     display: flex;
-    @media (max-width: 910px) {
+    @media (max-width: 1250px) {
       display: none;
     }
   }
@@ -276,7 +273,7 @@ button {
   .search-under-topbar {
     display: none;
     margin: 0px 15px 0px 20px;
-    @media (max-width: 910px) {
+    @media (max-width: 1250px) {
       display: flex;
     }
   }
@@ -299,9 +296,13 @@ button {
     transition: 0.5s ease;
     img {
       transition: 0.5s ease;
-      @media (max-width: 640px) {
+      @media (max-width: 710px) {
         width: 50px;
         height: 50px;
+      }
+      @media (max-width: 540px) {
+        width: 35px;
+        height: 35px;
       }
     }
     .logo-text {
@@ -313,14 +314,20 @@ button {
         margin: 0;
         color: black;
         transition: 0.5s ease;
-        @media (max-width: 1295px) {
+        @media (max-width: 1450px) {
           font-size: 14px;
         }
         @media (max-width: 1170px) {
           font-size: 18px;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 710px) {
           font-size: 14px;
+        }
+        @media (max-width: 540px) {
+          font-size: 10px;
+        }
+        @media (max-width: 430px) {
+          display: none;
         }
       }
       .dark {
@@ -330,14 +337,21 @@ button {
       h3 {
         color: $maincolor;
         margin: 0;
-        @media (max-width: 1295px) {
+        transition: 0.5s ease;
+        @media (max-width: 1450px) {
           font-size: 20px;
         }
         @media (max-width: 1170px) {
           font-size: 35px;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 710px) {
           font-size: 20px;
+        }
+        @media (max-width: 540px) {
+          font-size: 14px;
+        }
+        @media (max-width: 430px) {
+          display: none;
         }
       }
     }
@@ -358,6 +372,7 @@ button {
       background-color: $third-color;
       border-radius: 25px;
       padding: 4px 6px;
+      margin-right: 5px;
       cursor: pointer;
       transition: 0.3s;
       img {
@@ -381,6 +396,7 @@ button {
       background-color: $grey-dark;
       border-radius: 25px;
       padding: 4px 6px;
+      margin-right: 5px;
       cursor: pointer;
       transition: 0.3s;
       img {
@@ -406,7 +422,7 @@ button {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      margin: 15px 15px 15px 10px;
+      margin: 15px 15px 15px 5px;
       cursor: pointer;
       p {
         color: $maincolor;
@@ -484,12 +500,18 @@ button {
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
+        @media (max-width: 430px) {
+          flex-wrap: wrap;
+          justify-content: space-around;
+          li {
+            margin-bottom: 5px;
+          }
+        }
         li {
           background-color: $maincolor;
           cursor: pointer;
           color: $background;
           font-size: 16px;
-          
           border-radius: 15px;
           padding: 4px 10px;
           margin-right: 5px;
@@ -504,6 +526,7 @@ button {
             color: white;
             font-family: 'Roboto';
           }
+          
         }
       }
     }
@@ -1444,6 +1467,261 @@ button {
         }
         &:hover {
           transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.orders-overlay-shell {
+
+  .orders-overlay-shadow {
+    animation: fade-in 0.5s both;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  .orders-overlay {
+    animation: slide-in-blurred-left 0.2s both;
+    position: fixed;
+    width: 380px;
+    height: 840px;
+    top: 30px;
+    left: 30px;
+    border-radius: 15px;
+    background-color: $secondary-color;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    transition: 0.5s;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    .orders-title-row {
+      display: flex;
+      align-items: center;
+      h3 {
+        color: $maincolor;
+      }
+    }
+  
+    .orders-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 10px;
+      .btn-back {
+        background: 0;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        transition: 0.2s;
+  
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+    }
+  
+    .empty-orders-message {
+      background: $background;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 50%;
+      padding: 15px;
+      margin: 70% 30px 0 30px;
+      user-select: none;
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+  
+      .centered-block {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0px;
+      }
+  
+      b {
+        width: 80%;
+        text-align: center;
+      }
+    }
+  
+    .orders-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      overflow: auto;
+      scrollbar-width: none;
+  
+      .orders-item {
+        background: $background;
+        border-radius: 15px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 2px 10px 2px;
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          background-color: $third-color;
+        }
+
+        .orders-item-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100%;
+          cursor: pointer;
+          font-size: 14px;
+          h4 {
+            margin-top: 5px;
+          }
+          p {
+            font-family: 'Roboto';
+          }
+          .hidden {
+            p {
+              display: none;
+            }
+            h4 {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .orders-overlay-dark {
+    animation: slide-in-blurred-left 0.2s both;
+    position: fixed;
+    width: 380px;
+    height: 840px;
+    top: 30px;
+    left: 30px;
+    border-radius: 15px;
+    background-color: $secondary-color-dark;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    transition: 0.5s ease;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    .orders-title-row {
+      display: flex;
+      align-items: center;
+      h3 {
+        color: $maincolor;
+      }
+    }
+  
+    .orders-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      padding-left: 10px;
+      .btn-back {
+        background: 0;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        transition: 0.2s;
+  
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+    }
+  
+    .empty-orders-message {
+      background: $background-dark;
+      color: white;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 50%;
+      padding: 15px;
+      margin: 70% 30px 0 30px;
+      user-select: none;
+      h1 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+  
+      .centered-block {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0px;
+      }
+  
+      b {
+        width: 80%;
+        text-align: center;
+      }
+    }
+  
+    .orders-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      overflow: auto;
+      scrollbar-width: none;
+  
+      .orders-item {
+        background: $background-dark;
+        border-radius: 15px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 2px 10px 2px;
+        transition: 0.2s;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          background-color: $grey-dark;
+        }
+
+        .orders-item-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100%;
+          color: white;
+          font-size: 14px;
+          h4 {
+            margin-top: 5px;
+          }
+          p {
+            font-family: 'Roboto';
+          }
+          .hidden {
+            p {
+              display: none;
+            }
+            h4 {
+              margin: 0;
+            }
+          }
         }
       }
     }

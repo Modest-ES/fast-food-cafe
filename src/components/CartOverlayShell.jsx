@@ -5,17 +5,36 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../redux/slices/cartSlice.js';
 import { ThemeContext } from '../App.js';
+import axios from 'axios';
 
 import CartItem from "./CartItem.jsx";
 import EmptyCartMessage from "./EmptyCartMessage.jsx";
+import OrderCompleteMessage from './OrderCompleteMessage.jsx';
 
 export default function CartOverlayShell({onClickBtnBack}) {
     const dispatch = useDispatch();
     const {darkMode} = React.useContext(ThemeContext);
     const {totalPrice, totalAmount, items} = useSelector((state) => state.cart);
+    const [orderId, setOrderId] = React.useState(12);
+    const [orderComplete, setOrderComplete] = React.useState(false);
 
     const onClickClear = () => {
         dispatch(clearCart());
+    }
+
+    const onClickOrder = async () => {
+        try {
+            const { data } = await axios.post(`https://65d8c66cc96fbb24c1bc47d2.mockapi.io/orders`, {
+                items: items,
+                totalPrice: totalPrice,
+            });
+            setOrderId(data.id);
+            dispatch(clearCart());
+            setOrderComplete(true);
+        }
+        catch (error) {
+            alert("Ошибка при отправке заказа на сервер");
+        }
     }
 
     return(
@@ -34,7 +53,9 @@ export default function CartOverlayShell({onClickBtnBack}) {
                     </button>
                 </div>
 
-                {items.length === 0 && <EmptyCartMessage />}
+                {items.length === 0 && !orderComplete && <EmptyCartMessage />}
+
+                {orderComplete && <OrderCompleteMessage orderId={orderId}/>}
 
                 <div className='cart-content'>
                     {
@@ -44,16 +65,19 @@ export default function CartOverlayShell({onClickBtnBack}) {
                     }
                 </div>
           
-                <div className="cart-bottom">
-                    <div className="cart-total">
-                        <b>Итого ({totalAmount} ед.): </b>
-                        <div className="dashline"></div>
-                        <b>{totalPrice} руб.</b>
+                {
+                    totalAmount > 0 &&
+                    <div className="cart-bottom">
+                        <div className="cart-total">
+                            <b>Итого ({totalAmount} ед.): </b>
+                            <div className="dashline"></div>
+                            <b>{totalPrice} руб.</b>
+                        </div>
+                        <button className="cart-btn-order" onClick={onClickOrder}>
+                            <h2>Оформить заказ</h2>
+                        </button>
                     </div>
-                    <button className="cart-btn-order">
-                        <h2>Оформить заказ</h2>
-                    </button>
-                </div>
+                }
             </div>
         </div>
     );

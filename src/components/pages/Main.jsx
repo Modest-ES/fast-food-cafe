@@ -11,6 +11,7 @@ import Topbar from '../Topbar.jsx';
 import Menu from '../Menu.jsx';
 import Bottombar from '../Bottombar.jsx';
 import CartOverlayShell from '../CartOverlayShell.jsx';
+import OrdersOverlayShell from '../OrdersOverlayShell.jsx';
 import ItemCategory from '../ItemCategory.jsx';
 import SearchResultCategory from '../SearchResultCategory.jsx';
 import SkeletonSection from '../SkeletonSection.jsx';
@@ -23,6 +24,7 @@ export default function Main() {
     const [foodItemsList, setFoodItemsList] = React.useState([]); // список всех товаров
     const [contentIsLoading, setContentIsLoading] = React.useState(true); // статус состояния загрузки информации с бэкенда (загружается / нет)
     const [cartIsOpened, setCartIsOpened] = React.useState(false); // статус открытия корзины (открыта / нет)
+    const [ordersListIsOpened, setOrdersListIsOpened] = React.useState(false); // статус открытия списка заказов (открыта / нет)
     const [sortingMode, setSortingMode] = React.useState("id"); // тип сортировки товаров (id = по популярности / price = по цене / title = по алфавиту)
     const [searchData, setSearchData] = React.useState(''); // данные поля ввода поисковой строки
     const {darkMode} = React.useContext(ThemeContext);
@@ -69,8 +71,11 @@ export default function Main() {
                 {cartIsOpened && 
                 <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
 
+                {ordersListIsOpened && 
+                <OrdersOverlayShell onClickBtnBack={() => setOrdersListIsOpened(false)} />}
+
                 <SearchContext.Provider value={{searchData, setSearchData}}>
-                    <Topbar onClickCart={() => setCartIsOpened(true)} />
+                    <Topbar onClickCart={() => setCartIsOpened(true)} onClickOrders={() => setOrdersListIsOpened(true)}/>
                 </SearchContext.Provider>
 
                 <div className="main-section">

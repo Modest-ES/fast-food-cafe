@@ -10,7 +10,7 @@ import NotFound from './components/pages/NotFound.jsx';
 export const ThemeContext = React.createContext('');
 
 function App() {
-  const [darkMode, setDarkMode] = React.useState(true);
+  const [darkMode, setDarkMode] = React.useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode((prev) => !prev);

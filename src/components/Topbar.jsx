@@ -6,7 +6,7 @@ import Searchbar from './Searchbar.jsx';
 import { useSelector } from 'react-redux';
 import { ThemeContext } from '../App.js';
 
-export default function Topbar({onClickCart}) {
+export default function Topbar({onClickCart, onClickOrders}) {
   const {totalPrice, totalAmount} = useSelector(state => state.cart);
   const {darkMode, toggleDarkMode} = React.useContext(ThemeContext);
   React.useEffect(() => {
@@ -37,7 +37,11 @@ export default function Topbar({onClickCart}) {
               <img src={darkMode ? "./icon_sun.png" : "./icon_moon.png"} alt={darkMode ? "Тёмн" : "Свет"} title={darkMode ? "Сменить тему на светлую" : "Сменить тему на тёмную"} onClick={toggleDarkMode}/>
             </button>
 
-            <button className="cart-button" title="Shopping Cart" onClick={onClickCart}>
+            <button className={darkMode ? "theme-switch-dark" : 'theme-switch'} onClick={onClickOrders}>
+              <img src="./icon_orders.png" alt="Список заказов" title="Список заказов"/>
+            </button>
+
+            <button className="cart-button" title="Открыть корзину" onClick={onClickCart}>
               <p>{totalPrice} р.</p>
               <div className="cart-button-icon">
                 <img src="./icon_shoppingcart.png" alt="Cart" />

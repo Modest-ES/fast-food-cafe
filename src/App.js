@@ -4,7 +4,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Main from './components/pages/Main.jsx';
-//import Order from './components/pages/Order.jsx';
 import NotFound from './components/pages/NotFound.jsx';
 
 export const ThemeContext = React.createContext('');
@@ -20,7 +19,6 @@ function App() {
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
       <Routes>
         <Route path="/" element={<Main />} />
-        {/* <Route path="/placeorder" element={<Order />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeContext.Provider>

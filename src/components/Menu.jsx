@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { ThemeContext } from '../App.js';
+
+import styles from './Menu.module.scss';
 
 import foodItemsList from '../assets/foodItemsList.json';
 
@@ -30,8 +31,8 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
   }, []);
 
     return (
-      <div className="menu">
-        <nav className="navigation">
+      <div className={styles.menu}>
+        <nav className={styles.navigation}>
           <ul>
             {foodItemsList.map((obj)=>(
               <li key={obj.categoryId}>
@@ -40,20 +41,20 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
             ))}
           </ul>
         </nav>
-        <div ref={sortingRef} className="sorting">
-          <button className="sorting-button">
+        <div ref={sortingRef} className={styles.sorting}>
+          <button className={styles.sorting_button}>
             <img src="./icon_sorting.png" alt="Sort icon" />
-            <p onClick={() => setSortingListVisible(!sortingListVisible)} className={darkMode ? "dark" : ""}>Отсортировать:</p>
+            <p onClick={() => setSortingListVisible(!sortingListVisible)} className={darkMode ? styles.dark : ""}>Отсортировать:</p>
           </button>
           {sortingListVisible && (
-            <div className={darkMode ? "sorting-list-dark" : "sorting-list"}>
+            <div className={darkMode ? styles.sorting_list_dark : styles.sorting_list}>
               <ul>
                 {
                   sortingCategories.map((category, categoryIndex) => (
                     <li 
                     key={categoryIndex} 
                     onClick={() => sortingOptionClicked(category.sortingParameter)}
-                    className={currentSortingMode === category.sortingParameter ? "chosen" : ""}>
+                    className={(currentSortingMode === category.sortingParameter) ? styles.chosen : ""}>
                       {category.title}
                     </li>
                   ))

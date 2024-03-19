@@ -7,6 +7,8 @@ import { clearCart } from '../redux/slices/cartSlice.js';
 import { ThemeContext } from '../App.js';
 import axios from 'axios';
 
+import styles from './CartOverlayShell.module.scss';
+
 import CartItem from "./CartItem.jsx";
 import EmptyCartMessage from "./EmptyCartMessage.jsx";
 import OrderCompleteMessage from './OrderCompleteMessage.jsx';
@@ -38,18 +40,18 @@ export default function CartOverlayShell({onClickBtnBack}) {
     }
 
     return(
-        <div className="cart-overlay-shell">
-            <button className="cart-overlay-shadow" onClick={onClickBtnBack}></button>
-            <div className={darkMode ? "cart-overlay-dark" : "cart-overlay"}>
-                <div className="cart-title">
-                    <div className="cart-title-row">
-                        <button className="btn-back" onClick={onClickBtnBack}>
+        <div className={styles.cart_overlay_shell}>
+            <button className={styles.cart_overlay_shadow} onClick={onClickBtnBack}></button>
+            <div className={darkMode ? styles.cart_overlay_dark : styles.cart_overlay}>
+                <div className={styles.cart_title}>
+                    <div className={styles.cart_title_row}>
+                        <button className={styles.btn_back} onClick={onClickBtnBack}>
                             <img width={44} height={44} src="./icon_leftarrow.png" alt="Back button" title="Вернуться" />
                         </button>
                     </div>
                     <h3>Корзина</h3>
                     <button>
-                        <img src='./icon_clear.png' alt="clear" title="Очистить корзину" className="btn-clear-cart" onClick={onClickClear}/>
+                        <img src='./icon_clear.png' alt="clear" title="Очистить корзину" className={styles.btn_clear_cart} onClick={onClickClear}/>
                     </button>
                 </div>
 
@@ -57,7 +59,7 @@ export default function CartOverlayShell({onClickBtnBack}) {
 
                 {orderComplete && <OrderCompleteMessage orderId={orderId}/>}
 
-                <div className='cart-content'>
+                <div className={styles.cart_content}>
                     {
                         items.map((item) => (
                             <CartItem key={[item.id,item.option]} {...item} />
@@ -67,13 +69,13 @@ export default function CartOverlayShell({onClickBtnBack}) {
           
                 {
                     totalAmount > 0 &&
-                    <div className="cart-bottom">
-                        <div className="cart-total">
+                    <div className={styles.cart_bottom}>
+                        <div className={styles.cart_total}>
                             <b>Итого ({totalAmount} ед.): </b>
-                            <div className="dashline"></div>
+                            <div className={styles.dashline}></div>
                             <b>{totalPrice} руб.</b>
                         </div>
-                        <button className="cart-btn-order" onClick={onClickOrder}>
+                        <button className={styles.cart_btn_order} onClick={onClickOrder}>
                             <h2>Оформить заказ</h2>
                         </button>
                     </div>

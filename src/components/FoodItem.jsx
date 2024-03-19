@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import { addItem } from "../redux/slices/cartSlice.js";
 import { ThemeContext } from '../App.js';
 
+import styles from './FoodItem.module.scss';
+
 export default function FoodItem({id, options, title, imgsrc, ingredients}) {
 
   const {darkMode} = React.useContext(ThemeContext);
@@ -29,9 +31,9 @@ export default function FoodItem({id, options, title, imgsrc, ingredients}) {
     dispatch(addItem(currentItem));
   }
     return (
-      <div className={darkMode ? "food-item-dark" : "food-item"}>
-          <img src={imgsrc} alt={title} title={title} className={ingredientsShown ? 'food-item-frontside-flipped' : 'food-item-frontside'} onClick={showIngredients}/>
-          <div className={ingredientsShown ? 'food-item-backside-flipped' : 'food-item-backside'} onClick={showIngredients}>
+      <div className={darkMode ? styles.food_item_dark : styles.food_item}>
+          <img src={imgsrc} alt={title} title={title} className={ingredientsShown ? styles.food_item_frontside_flipped : styles.food_item_frontside} onClick={showIngredients}/>
+          <div className={ingredientsShown ? styles.food_item_backside_flipped : styles.food_item_backside} onClick={showIngredients}>
             <h5>Состав:</h5>
             <ul>
               {ingredients.map((ingredient) => (
@@ -40,16 +42,16 @@ export default function FoodItem({id, options, title, imgsrc, ingredients}) {
             </ul>
           </div>
         <h4 onClick={showIngredients}>{title}</h4>
-        <div className="food-item-options">
+        <div className={styles.food_item_options}>
           {
             options.map((optionTitle, optionIndex) => (
-              <button key={optionIndex} onClick={() => setCurrentFoodOption(optionIndex)} className={currentFoodOption === optionIndex ? "chosen" : ""}>{optionTitle[0]}</button>
+              <button key={optionIndex} onClick={() => setCurrentFoodOption(optionIndex)} className={(currentFoodOption === optionIndex) ? styles.chosen : ""}>{optionTitle[0]}</button>
             ))
           }
         </div>
-        <div className="food-item-bar">
+        <div className={styles.food_item_bar}>
           <p>{options[currentFoodOption][1]} руб.</p>
-          <button className="food-item-buy-button"
+          <button className={styles.food_item_buy_button}
           onClick={onClickAddItem}>Выбрать</button>
         </div>
       </div>

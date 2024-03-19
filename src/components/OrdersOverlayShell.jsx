@@ -8,6 +8,8 @@ import { ThemeContext } from '../App.js';
 import OrderItem from "./OrderItem.jsx";
 import EmptyOrdersListMessage from "./EmptyOrdersListMessage.jsx";
 
+import styles from './OrdersOverlayShell.module.scss';
+
 export default function OrdersOverlayShell({onClickBtnBack}) {
     const {darkMode} = React.useContext(ThemeContext); // включена или нет темная тема
     const [ordersList, setOrdersList] = React.useState([]); // список заказов
@@ -24,13 +26,13 @@ export default function OrdersOverlayShell({onClickBtnBack}) {
       }, []);
 
     return(
-        <div className="orders-overlay-shell">
-            <button className="orders-overlay-shadow" onClick={onClickBtnBack}></button>
-            <div className={darkMode ? "orders-overlay-dark" : "orders-overlay"}>
-                <div className="orders-title">
+        <div className={styles.orders_overlay_shell}>
+            <button className={styles.orders_overlay_shadow} onClick={onClickBtnBack}></button>
+            <div className={darkMode ? styles.orders_overlay_dark : styles.orders_overlay}>
+                <div className={styles.orders_title}>
                     <h3>Список заказов</h3>
-                    <div className="orders-title-row">
-                        <button className="btn-back" onClick={onClickBtnBack}>
+                    <div className={styles.orders_title_row}>
+                        <button className={styles.btn_back} onClick={onClickBtnBack}>
                             <img width={44} height={44} src="./icon_rightarrow.png" alt="Back button" title="Вернуться" />
                         </button>
                     </div>
@@ -40,7 +42,7 @@ export default function OrdersOverlayShell({onClickBtnBack}) {
                 <>
                     {ordersList.length === 0 && <EmptyOrdersListMessage />}
 
-                    <div className='orders-content'>
+                    <div className={styles.orders_content}>
                         {
                             ordersList.reverse().map((item) => (
                                 <OrderItem key={item.id} {...item} />

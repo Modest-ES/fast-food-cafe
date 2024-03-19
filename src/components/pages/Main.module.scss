@@ -1,0 +1,56 @@
+@import '../../scss/variables';
+
+.mainshell {
+    width: 60vw;
+    height: 100%;
+    background-color: $secondary-color;
+    margin-left: 20vw;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 25px;
+    transition: 0.5s ease;
+    @media (max-width: 1200px) {
+      width: 90vw;
+      margin-left: 5vw;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+}
+  
+.mainshell_dark {
+    width: 60vw;
+    height: 100%;
+    background-color: $secondary-color-dark;
+    margin-left: 20vw;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 25px;
+    transition: 0.5s ease;
+    @media (max-width: 1200px) {
+      width: 90vw;
+      margin-left: 5vw;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+}
+
+.main_section {
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    .dark {
+      color: white;
+    }
+  
+    h2 {
+      margin-bottom: 20px;
+      margin-left: 1.5%;
+    }
+  
+    .food_section {
+      margin-bottom: 25px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+}

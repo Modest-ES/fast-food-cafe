@@ -4,6 +4,8 @@
 import { useDispatch } from "react-redux";
 import { addItem, minusItem, deleteItem } from "../redux/slices/cartSlice";
 
+import styles from './CartItem.module.scss';
+
 export default function CartItem({id, title, price, option, count, imgsrc}) {
     const dispatch = useDispatch();
     const onClickPlus = () => {
@@ -22,20 +24,20 @@ export default function CartItem({id, title, price, option, count, imgsrc}) {
         );
     };
     return (
-        <div className="cart-item">
-            <img src={imgsrc} alt="pizza" title="pizza" className="cart-item-img" />
-            <div className="cart-item-info">
-                <div className="cart-item-upper-side">
-                    <div className="cart-item-title-block">
+        <div className={styles.cart_item}>
+            <img src={imgsrc} alt="pizza" title="pizza" className={styles.cart_item_img} />
+            <div className={styles.cart_item_info}>
+                <div className={styles.cart_item_upper_side}>
+                    <div className={styles.cart_item_title_block}>
                         <h4>{title}</h4>
                         <p>{option}</p>
                     </div>
-                    <button className="cart-btn-delete">
+                    <button className={styles.cart_btn_delete}>
                         <img src="./icon_cross.png" alt="Удалить товар" title="Удалить товар" onClick={onClickDelete}/>
                     </button>
                 </div>
-                <div className="cart-item-lower-side">
-                    <div className='amount-options'>
+                <div className={styles.cart_item_lower_side}>
+                    <div className={styles.amount_options}>
                         <button>
                             <img src="./icon_itemminus.png" alt="less" onClick={onClickMinus}/>
                         </button>

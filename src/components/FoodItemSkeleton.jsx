@@ -3,10 +3,11 @@
 
 import React from "react"
 import ContentLoader from "react-content-loader"
+import styles from './FoodItemSkeleton.module.scss';
 
 const MyLoader = (props) => (
   <ContentLoader 
-    className="food-item"
+    className={styles.food_item}
     speed={2}
     width={314}
     height={420}

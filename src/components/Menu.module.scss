@@ -1,0 +1,135 @@
+@import '../scss/variables';
+
+.menu {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    @media (max-width: 730px) {
+      flex-direction: column;
+    }
+    .navigation {
+      @media (max-width: 730px) {
+        margin-bottom: 15px;
+      }
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        @media (max-width: 430px) {
+          flex-wrap: wrap;
+          justify-content: space-around;
+          li {
+            margin-bottom: 5px;
+          }
+        }
+        li {
+          background-color: $maincolor;
+          cursor: pointer;
+          color: $background;
+          font-size: 16px;
+          border-radius: 15px;
+          padding: 4px 10px;
+          margin-right: 5px;
+          transition: 0.3s;
+          @media (max-width: 530px) {
+            font-size: 13px;
+          }
+          &:hover {
+            transform: scale(1.05);
+          }
+          a {
+            color: white;
+            font-family: 'Roboto';
+          }
+          
+        }
+      }
+    }
+
+    .sorting {
+      position: relative;
+      .sorting_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+        user-select: none;
+        cursor: pointer;
+        transition: 0.5s ease;
+        img {
+          width: 15px;
+          height: 15px;
+          margin-right: 5px;
+          margin-bottom: 2px;
+        }
+        p {
+          text-decoration: underline dotted $maincolor;
+          margin-bottom: 3px;
+          font-family: 'Roboto';
+          font-size: 16px;
+        }
+        .dark {
+          color: white;
+        }
+      }
+
+      .sorting_list {
+        animation: slide-down 0.25s both;
+        position: absolute;
+        overflow: hidden;
+        right: 0px;
+        background-color: $background;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        ul {
+          overflow: hidden;
+          li {
+            user-select: none;
+            font-size: 15px;
+            font-family: 'Roboto';
+            padding: 2px 5px;
+            cursor: pointer;
+            &:hover {
+              background-color: rgba(46, 161, 23, 0.5);
+              color: white;
+            }
+          }
+        }
+        .chosen {
+          background-color: $maincolor;
+          color: white;
+        }
+      }
+      .sorting_list_dark {
+        animation: slide-down 0.25s both;
+        position: absolute;
+        overflow: hidden;
+        right: 0px;
+        background-color: $background-dark;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        color: white;
+        ul {
+          overflow: hidden;
+          li {
+            user-select: none;
+            font-size: 15px;
+            font-family: 'Roboto';
+            padding: 2px 5px;
+            cursor: pointer;
+            &:hover {
+              background-color: rgba(46, 161, 23, 0.5);
+              color: white;
+            }
+          }
+        }
+        .chosen {
+          background-color: $maincolor;
+          color: white;
+        }
+      }
+    }
+  }

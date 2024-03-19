@@ -18,6 +18,8 @@ import SkeletonSection from '../SkeletonSection.jsx';
 
 import { ThemeContext } from '../../App.js';
 
+import styles from './Main.module.scss';
+
 export const SearchContext = React.createContext();
 
 export default function Main() {
@@ -66,7 +68,7 @@ export default function Main() {
     }
 
     return(
-            <main className={darkMode ? "mainshell-dark" : "mainshell"}>
+            <main className={darkMode ? styles.mainshell_dark : styles.mainshell}>
 
                 {cartIsOpened && 
                 <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}
@@ -78,7 +80,7 @@ export default function Main() {
                     <Topbar onClickCart={() => setCartIsOpened(true)} onClickOrders={() => setOrdersListIsOpened(true)}/>
                 </SearchContext.Provider>
 
-                <div className="main-section">
+                <div className={styles.main_section}>
                     {!searchData && <Menu currentSortingMode={sortingMode} functionChangeSortingMode={(i) => setSortingMode(i)} />}
 
                     {contentIsLoading &&
@@ -94,8 +96,8 @@ export default function Main() {
 
                     {searchData &&
                         <>
-                            <h2 className={darkMode ? "dark" : ""}>Поиск по запросу: "{searchData}"</h2>
-                            <div className="food-section">
+                            <h2 className={darkMode ? styles.dark : ""}>Поиск по запросу: "{searchData}"</h2>
+                            <div className={styles.food_section}>
                                 {foodItemsList.map((objCategory) => (
                                     sortFetchedData(objCategory))).map((objCategory) => (
                                         <SearchResultCategory key={objCategory.id}searchData={searchData} objCategory={objCategory} />

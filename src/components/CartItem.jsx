@@ -1,12 +1,15 @@
 
 // Карточка товара внутри корзины
 
+import React from 'react';
 import { useDispatch } from "react-redux";
 import { addItem, minusItem, deleteItem } from "../redux/slices/cartSlice";
+import { ThemeContext } from "../App";
 
 import styles from './CartItem.module.scss';
 
 export default function CartItem({id, title, price, option, count, imgsrc}) {
+    const {darkMode} = React.useContext(ThemeContext);
     const dispatch = useDispatch();
     const onClickPlus = () => {
         dispatch(
@@ -24,7 +27,7 @@ export default function CartItem({id, title, price, option, count, imgsrc}) {
         );
     };
     return (
-        <div className={styles.cart_item}>
+        <div className={darkMode ? `${styles.cart_item} ${styles.cart_item_dark}` : styles.cart_item}>
             <img src={imgsrc} alt="pizza" title="pizza" className={styles.cart_item_img} />
             <div className={styles.cart_item_info}>
                 <div className={styles.cart_item_upper_side}>

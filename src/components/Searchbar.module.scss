@@ -9,14 +9,12 @@
     margin-left: 5px;
     width: 200px;
     @media (max-width: 1375px) {
-      width: 150px;
-    }
-    @media (max-width: 1295px) {
-      width: 200px;
-    }
-    @media (max-width: 920px) {
       width: 100%;
     }
+}
+
+.search_field_dark {
+  color: white;
 }
 
 .search_button {

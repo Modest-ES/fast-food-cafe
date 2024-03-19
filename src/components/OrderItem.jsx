@@ -2,11 +2,12 @@
 // Карточка заказа внутри списка заказов
 
 import React from 'react';
+import { ThemeContext } from "../App";
 
 import styles from './OrderItem.module.scss';
 
 export default function OrderItem({id, items, totalPrice}) {
-    
+  const {darkMode} = React.useContext(ThemeContext);
   const [orderHidden, setOrderHidden] = React.useState(true);
 
   const hideOrder = () => {
@@ -14,7 +15,7 @@ export default function OrderItem({id, items, totalPrice}) {
   }
 
     return (
-        <div className={styles.orders_item}>
+        <div className={darkMode ? `${styles.orders_item} ${styles.orders_item_dark}` : styles.orders_item}>
             <div className={styles.orders_item_info} onClick={hideOrder}>
                 <h3>Заказ №{id}</h3>
                 {items.map((item) => (

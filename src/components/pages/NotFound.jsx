@@ -8,21 +8,14 @@ import topbarStyles from '../Topbar.module.scss';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../../App.js';
 
 import Bottombar from '../Bottombar.jsx';
 
 export default function NotFound() {
-  const {darkMode} = React.useContext(ThemeContext);
 
   React.useEffect(() => {
-    if(darkMode) {
-      document.body.style.background = 'rgb(40, 40, 40)';
-    }
-    else {
-      document.body.style.background = 'rgb(217, 252, 210)';
-    }
-  }, [darkMode]);
+    document.body.style.background = 'rgb(217, 252, 210)';
+  }, []);
 
     return(
     <div className={mainStyles.mainshell}>

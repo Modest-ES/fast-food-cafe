@@ -63,6 +63,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         b {
           color: black;
           margin: 0;
@@ -89,4 +90,19 @@
         }
       }
     }
+}
+
+.cart_item_dark {
+  background: $background-dark;
+  &:hover {
+    background-color: $grey-dark;
   }
+  .cart_item_info {
+    color: white;
+    .cart_item_lower_side {
+      b {
+        color: white;
+      }
+    }
+  }
+}

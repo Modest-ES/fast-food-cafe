@@ -42,7 +42,7 @@ export default function CartOverlayShell({onClickBtnBack}) {
     return(
         <div className={styles.cart_overlay_shell}>
             <button className={styles.cart_overlay_shadow} onClick={onClickBtnBack}></button>
-            <div className={darkMode ? styles.cart_overlay_dark : styles.cart_overlay}>
+            <div className={darkMode ? `${styles.cart_overlay_dark} ${styles.cart_overlay}` : styles.cart_overlay}>
                 <div className={styles.cart_title}>
                     <div className={styles.cart_title_row}>
                         <button className={styles.btn_back} onClick={onClickBtnBack}>

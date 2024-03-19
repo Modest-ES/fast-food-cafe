@@ -28,7 +28,7 @@ export default function OrdersOverlayShell({onClickBtnBack}) {
     return(
         <div className={styles.orders_overlay_shell}>
             <button className={styles.orders_overlay_shadow} onClick={onClickBtnBack}></button>
-            <div className={darkMode ? styles.orders_overlay_dark : styles.orders_overlay}>
+            <div className={darkMode ? `${styles.orders_overlay} ${styles.orders_overlay_dark}` : styles.orders_overlay}>
                 <div className={styles.orders_title}>
                     <h3>Список заказов</h3>
                     <div className={styles.orders_title_row}>

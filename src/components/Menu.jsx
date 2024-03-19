@@ -47,7 +47,7 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
             <p onClick={() => setSortingListVisible(!sortingListVisible)} className={darkMode ? styles.dark : ""}>Отсортировать:</p>
           </button>
           {sortingListVisible && (
-            <div className={darkMode ? styles.sorting_list_dark : styles.sorting_list}>
+            <div className={darkMode ? `${styles.sorting_list} ${styles.sorting_list_dark}` : styles.sorting_list}>
               <ul>
                 {
                   sortingCategories.map((category, categoryIndex) => (

@@ -36,4 +36,14 @@
         }
       }
     }
+}
+
+.orders_item_dark {
+  background: $background-dark;
+  &:hover {
+    background-color: $grey-dark;
   }
+  .orders_item_info {
+    color: white;
+  }
+}

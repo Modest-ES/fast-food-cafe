@@ -68,7 +68,7 @@ export default function Main() {
     }
 
     return(
-            <main className={darkMode ? styles.mainshell_dark : styles.mainshell}>
+            <main className={darkMode ? `${styles.mainshell} ${styles.mainshell_dark}` : styles.mainshell}>
 
                 {cartIsOpened && 
                 <CartOverlayShell onClickBtnBack={() => setCartIsOpened(false)} />}

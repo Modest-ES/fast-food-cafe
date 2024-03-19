@@ -31,7 +31,7 @@ export default function FoodItem({id, options, title, imgsrc, ingredients}) {
     dispatch(addItem(currentItem));
   }
     return (
-      <div className={darkMode ? styles.food_item_dark : styles.food_item}>
+      <div className={darkMode ? `${styles.food_item} ${styles.food_item_dark}` : styles.food_item}>
           <img src={imgsrc} alt={title} title={title} className={ingredientsShown ? styles.food_item_frontside_flipped : styles.food_item_frontside} onClick={showIngredients}/>
           <div className={ingredientsShown ? styles.food_item_backside_flipped : styles.food_item_backside} onClick={showIngredients}>
             <h5>Состав:</h5>

@@ -9,6 +9,9 @@ import axios from 'axios';
 
 import styles from './CartOverlayShell.module.scss';
 
+import icon_left_arrow from "../assets/icons/icon_leftarrow.png";
+import icon_clear from "../assets/icons/icon_clear.png";
+
 import CartItem from "./CartItem.jsx";
 import EmptyCartMessage from "./EmptyCartMessage.jsx";
 import OrderCompleteMessage from './OrderCompleteMessage.jsx';
@@ -46,12 +49,12 @@ export default function CartOverlayShell({onClickBtnBack}) {
                 <div className={styles.cart_title}>
                     <div className={styles.cart_title_row}>
                         <button className={styles.btn_back} onClick={onClickBtnBack}>
-                            <img width={44} height={44} src="./icon_leftarrow.png" alt="Back button" title="Вернуться" />
+                            <img width={44} height={44} src={icon_left_arrow} alt="Back button" title="Вернуться" />
                         </button>
                     </div>
                     <h3>Корзина</h3>
                     <button>
-                        <img src='./icon_clear.png' alt="clear" title="Очистить корзину" className={styles.btn_clear_cart} onClick={onClickClear}/>
+                        <img src={icon_clear} alt="clear" title="Очистить корзину" className={styles.btn_clear_cart} onClick={onClickClear}/>
                     </button>
                 </div>
 

@@ -3,6 +3,8 @@ import { ThemeContext } from '../App.js';
 
 import styles from './Menu.module.scss';
 
+import icon_sort from "../assets/icons/icon_sorting.png";
+
 import foodItemsList from '../assets/foodItemsList.json';
 
 export default function Menu({currentSortingMode, functionChangeSortingMode}) {
@@ -43,7 +45,7 @@ export default function Menu({currentSortingMode, functionChangeSortingMode}) {
         </nav>
         <div ref={sortingRef} className={styles.sorting}>
           <button className={styles.sorting_button}>
-            <img src="./icon_sorting.png" alt="Sort icon" />
+            <img src={icon_sort} alt="Sort icon" />
             <p onClick={() => setSortingListVisible(!sortingListVisible)} className={darkMode ? styles.dark : ""}>Отсортировать:</p>
           </button>
           {sortingListVisible && (

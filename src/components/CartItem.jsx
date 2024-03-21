@@ -8,6 +8,10 @@ import { ThemeContext } from "../App";
 
 import styles from './CartItem.module.scss';
 
+import icon_cross from "../assets/icons/icon_cross.png";
+import icon_plus from "../assets/icons/icon_itemplus.png";
+import icon_minus from "../assets/icons/icon_itemminus.png";
+
 export default function CartItem({id, title, price, option, count, imgsrc}) {
     const {darkMode} = React.useContext(ThemeContext);
     const dispatch = useDispatch();
@@ -36,17 +40,17 @@ export default function CartItem({id, title, price, option, count, imgsrc}) {
                         <p>{option}</p>
                     </div>
                     <button className={styles.cart_btn_delete}>
-                        <img src="./icon_cross.png" alt="Удалить товар" title="Удалить товар" onClick={onClickDelete}/>
+                        <img src={icon_cross} alt="Удалить товар" title="Удалить товар" onClick={onClickDelete}/>
                     </button>
                 </div>
                 <div className={styles.cart_item_lower_side}>
                     <div className={styles.amount_options}>
                         <button>
-                            <img src="./icon_itemminus.png" alt="less" onClick={onClickMinus}/>
+                            <img src={icon_minus} alt="less" onClick={onClickMinus}/>
                         </button>
                         <p>{count}</p>
                         <button>
-                            <img src="./icon_itemplus.png" alt="more" onClick={onClickPlus}/>
+                            <img src={icon_plus} alt="more" onClick={onClickPlus}/>
                         </button>
                     </div>
                     <b>{price * count} руб.</b>

@@ -8,6 +8,13 @@ import { ThemeContext } from '../App.js';
 
 import styles from './Topbar.module.scss';
 
+import logo_white from "../assets/icons/favicon_white.png";
+import logo_black from "../assets/icons/favicon_light.png"
+import icon_sun from "../assets/icons/icon_sun.png"
+import icon_moon from "../assets/icons/icon_moon.png";
+import icon_orders from "../assets/icons/icon_orders.png"
+import icon_shopping_cart from "../assets/icons/icon_shoppingcart.png";
+
 export default function Topbar({onClickCart, onClickOrders}) {
   const {totalPrice, totalAmount} = useSelector(state => state.cart);
   const {darkMode, toggleDarkMode} = React.useContext(ThemeContext);
@@ -24,7 +31,7 @@ export default function Topbar({onClickCart, onClickOrders}) {
       <header className={styles.topbar_shell}>
         <div className={styles.topbar}>
           <div className={styles.logo_section}>
-            <img src={darkMode ? "./favicon_white.png" : "./favicon_light.png"} alt="Logo" />
+            <img src={darkMode ? logo_white : logo_black} alt="Logo" />
             <div className={styles.logo_text}>
               <h3>Fast Food Cafe</h3>
               <p className={darkMode ? styles.dark : ""}>Доставка еды на дом</p>
@@ -36,17 +43,17 @@ export default function Topbar({onClickCart, onClickOrders}) {
           <div className={styles.cart_section}>
 
             <button className={darkMode ? `${styles.theme_switch} ${styles.theme_switch_dark}` : styles.theme_switch}>
-              <img src={darkMode ? "./icon_sun.png" : "./icon_moon.png"} alt={darkMode ? "Тёмн" : "Свет"} title={darkMode ? "Сменить тему на светлую" : "Сменить тему на тёмную"} onClick={toggleDarkMode}/>
+              <img src={darkMode ? icon_sun : icon_moon} alt={darkMode ? "Тёмн" : "Свет"} title={darkMode ? "Сменить тему на светлую" : "Сменить тему на тёмную"} onClick={toggleDarkMode}/>
             </button>
 
             <button className={darkMode ? `${styles.theme_switch} ${styles.theme_switch_dark}` : styles.theme_switch} onClick={onClickOrders}>
-              <img src="./icon_orders.png" alt="Список заказов" title="Список заказов"/>
+              <img src={icon_orders} alt="Список заказов" title="Список заказов"/>
             </button>
 
             <button className={styles.cart_button} title="Открыть корзину" onClick={onClickCart}>
               <p>{totalPrice} р.</p>
               <div className={styles.cart_button_icon}>
-                <img src="./icon_shoppingcart.png" alt="Cart" />
+                <img src={icon_shopping_cart} alt="Cart" />
                 <p>{totalAmount}</p>
               </div>
             </button>

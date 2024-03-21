@@ -10,6 +10,8 @@ import EmptyOrdersListMessage from "./EmptyOrdersListMessage.jsx";
 
 import styles from './OrdersOverlayShell.module.scss';
 
+import icon_right_arrow from "../assets/icons/icon_rightarrow.png";
+
 export default function OrdersOverlayShell({onClickBtnBack}) {
     const {darkMode} = React.useContext(ThemeContext); // включена или нет темная тема
     const [ordersList, setOrdersList] = React.useState([]); // список заказов
@@ -33,7 +35,7 @@ export default function OrdersOverlayShell({onClickBtnBack}) {
                     <h3>Список заказов</h3>
                     <div className={styles.orders_title_row}>
                         <button className={styles.btn_back} onClick={onClickBtnBack}>
-                            <img width={44} height={44} src="./icon_rightarrow.png" alt="Back button" title="Вернуться" />
+                            <img width={44} height={44} src={icon_right_arrow} alt="Back button" title="Вернуться" />
                         </button>
                     </div>
                 </div>

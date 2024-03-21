@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fast-food-cafe/static/css/main.b95bdddd.css",
+    "main.js": "/fast-food-cafe/static/js/main.699a56b6.js",
+    "index.html": "/fast-food-cafe/index.html",
+    "main.b95bdddd.css.map": "/fast-food-cafe/static/css/main.b95bdddd.css.map",
+    "main.699a56b6.js.map": "/fast-food-cafe/static/js/main.699a56b6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b95bdddd.css",
+    "static/js/main.699a56b6.js"
+  ]
+}

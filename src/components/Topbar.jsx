@@ -20,10 +20,19 @@ export default function Topbar({onClickCart, onClickOrders}) {
   const {darkMode, toggleDarkMode} = React.useContext(ThemeContext);
   React.useEffect(() => {
     if(darkMode) {
-      document.body.style.background = 'rgb(40, 40, 40)';
+      document.body.style.background = 'linear-gradient(45deg, rgb(46, 161, 23), rgb(40, 40, 40) 17%, rgb(45, 45, 45) 50%, rgb(40, 40, 40) 83%, rgb(46, 161, 23))';
+      document.body.style.backgroundAttachment = 'fixed';
+      document.body.style.backgroundSize = '400% 400%';
+      document.body.style.animation = 'gradient 35s ease infinite';
+      document.body.style.height = '100vh';
     }
     else {
       document.body.style.background = 'rgb(217, 252, 210)';
+      document.body.style.background = 'linear-gradient(45deg, rgb(46, 161, 23), rgb(217, 252, 210) 17%, rgb(217, 255, 210) 50%, rgb(217, 252, 210) 83%, rgb(46, 161, 23))';
+      document.body.style.backgroundAttachment = 'fixed';
+      document.body.style.backgroundSize = '400% 400%';
+      document.body.style.animation = 'gradient 35s ease infinite';
+      document.body.style.height = '100vh';
     }
   }, [darkMode]);
   

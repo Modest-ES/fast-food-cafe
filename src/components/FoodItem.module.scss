@@ -1,5 +1,14 @@
 @import '../scss/variables';
 
+@keyframes shining {
+	0% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .food_item {
     @media (max-width: 890px) {
       width: 45%;
@@ -27,6 +36,9 @@
     &:hover {
       transform: scale(1.02);
       box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+      background: linear-gradient(45deg, rgb(203, 255, 203) 0%, rgb(203, 255, 203) 47%, rgb(255, 255, 255) 50%, rgb(203, 255, 203) 53%, rgb(203, 255, 203) 100%);
+      background-size: 500% 500%;
+      animation: shining 2s ease infinite;
     }
     .food_item_frontside, .food_item_backside {
       border-radius: 15px;
@@ -171,6 +183,13 @@
     }
     h4 {
       color: white;
+    }
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+      background: linear-gradient(45deg, rgb(84, 84, 84) 0%, rgb(84, 84, 84) 47%, rgb(150, 150, 150) 50%, rgb(84, 84, 84) 53%, rgb(84, 84, 84) 100%);
+      background-size: 500% 500%;
+      animation: shining 2s ease infinite;
     }
     
     .food_item_options {

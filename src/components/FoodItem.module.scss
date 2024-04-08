@@ -20,6 +20,12 @@
       margin-left: 10%;
       margin-right: 10%;
     }
+    @media (max-width: 330px) {
+      .food_item_options {
+        display: flex;
+        flex-direction: column;
+      }
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -115,7 +121,6 @@
     
     .food_item_options {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: space-between;
       margin: 5px 0px;
